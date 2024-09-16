@@ -91,11 +91,12 @@ def display_plausibility(plausibility_data):
                 st.pyplot(plt)
             elif isinstance(values, dict):
                 keys = list(values.keys())
-                if all(isinstance(k, int) for k in keys):
+                if all(isinstance(k, dict) for k in values.values()):
                     # Barchart for years with sub-dict
+                    st.write("#### Yearly Data Barchart")
                     years = keys
                     means = [sum(k * v for k, v in year_dict.items()) / sum(year_dict.values()) for year_dict in values.values()]
-                    st.write("#### Yearly Data Barchart")
+                    
                     sns.barplot(x=years, y=means)
                     st.pyplot(plt)
                 else:
