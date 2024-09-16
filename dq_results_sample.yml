@@ -1,0 +1,2614 @@
+metadata: {written on: '2024-06-11 18:57:56', execution time: '0:00:54.017893', etl version: 3.0.0rc4,
+  data-quality version: 2.1.1, intonate-cdm version: 2.3.0a7, scales version: 0.0.4,
+  source data version: v0.2, etl last run: '2024-06-11 18:52:55', log file name: 2024-06-11T185254.log,
+  total number of patients: 6328}
+excluded records:
+- name: Record is not linked to a valid person_id | Observation
+  status: COMPLETED
+  values: {msclinic_fact_to_observation: 0}
+- name: Record is not linked to a valid person_id | Relapse
+  status: COMPLETED
+  values: {relapse_to_relapse: 0}
+- name: Record is not linked to a valid person_id | DrugExposure
+  status: COMPLETED
+  values: {dmt_to_drug_exposure: 0}
+- name: Record is not linked to a valid person_id | MsDiagnosis
+  status: COMPLETED
+  values: {ms_course_to_diagnosis: 0, covid19_to_diagnosis: 0}
+- name: Record is not linked to a valid person_id | Measurement
+  status: COMPLETED
+  values: {mri_to_measurement: 0, cigarettes_to_measurement: 0, vitamin_d_to_measurement: 0}
+- name: Record is not linked to a valid person_id | Biosample
+  status: COMPLETED
+  values: {ris_study_to_biosample: 1, csf_study_to_biosample: 0}
+completeness & conformance (single field):
+  date fields:
+    person.birthdate:
+      status: PASS
+      results:
+      - name: Completeness | person.birthdate
+        status: COMPLETED
+        total records: 6328
+        mapped values: {count: 6328, '%': 100.0}
+        unmapped values: {count: 0, '%': 0.0}
+        null values: {count: 0, '%': 0.0}
+        null raw values: {count: 0, '%': 0.0}
+      - name: Unmapped values | person.birthdate. This check reports raw values that
+          don't have a respective mapped value. records_checked indicates the sum
+          of mapped and unmapped values.
+        status: PASS
+        records checked: 6328
+        invalid values: {}
+      - name: Date precision person.birthdate
+        status: COMPLETED
+        Full date: {count: 0, '%': 0.0}
+        Year and month: {count: 6328, '%': 100.0}
+        Year only: {count: 0, '%': 0.0}
+      - name: Date format person.birthdate
+        status: PASS
+        records checked: 6328
+        invalid values: {}
+    person.death_date:
+      status: PASS
+      results:
+      - name: Completeness | person.death_date
+        status: COMPLETED
+        total records: 6328
+        mapped values: {count: 21, '%': 0.33}
+        unmapped values: {count: 0, '%': 0.0}
+        null values: {count: 6307, '%': 99.67}
+        null raw values: {count: 6307, '%': 99.67}
+      - name: Unmapped values | person.death_date. This check reports raw values that
+          don't have a respective mapped value. records_checked indicates the sum
+          of mapped and unmapped values.
+        status: PASS
+        records checked: 21
+        invalid values: {}
+      - name: Date precision person.death_date
+        status: COMPLETED
+        Full date: {count: 0, '%': 0.0}
+        Year and month: {count: 21, '%': 100.0}
+        Year only: {count: 0, '%': 0.0}
+      - name: Date format person.death_date
+        status: PASS
+        records checked: 21
+        invalid values: {}
+    diagnosis.diagnosis_start_date:
+      status: PASS
+      results:
+      - name: Completeness | diagnosis.diagnosis_start_date
+        status: COMPLETED
+        total records: 10855
+        mapped values: {count: 10855, '%': 100.0}
+        unmapped values: {count: 0, '%': 0.0}
+        null values: {count: 0, '%': 0.0}
+        null raw values: {count: 0, '%': 0.0}
+      - name: Unmapped values | diagnosis.diagnosis_start_date. This check reports
+          raw values that don't have a respective mapped value. records_checked indicates
+          the sum of mapped and unmapped values.
+        status: PASS
+        records checked: 10855
+        invalid values: {}
+      - name: Date precision diagnosis.diagnosis_start_date
+        status: COMPLETED
+        Full date: {count: 10855, '%': 100.0}
+        Year and month: {count: 0, '%': 0.0}
+        Year only: {count: 0, '%': 0.0}
+      - name: Date format diagnosis.diagnosis_start_date
+        status: PASS
+        records checked: 10855
+        invalid values: {}
+    diagnosis.diagnosis_end_date:
+      status: PASS
+      results:
+      - name: Completeness | diagnosis.diagnosis_end_date
+        status: COMPLETED
+        total records: 10855
+        mapped values: {count: 5838, '%': 53.78}
+        unmapped values: {count: 0, '%': 0.0}
+        null values: {count: 5017, '%': 46.22}
+        null raw values: {count: 5017, '%': 46.22}
+      - name: Unmapped values | diagnosis.diagnosis_end_date. This check reports raw
+          values that don't have a respective mapped value. records_checked indicates
+          the sum of mapped and unmapped values.
+        status: PASS
+        records checked: 5838
+        invalid values: {}
+      - name: Date precision diagnosis.diagnosis_end_date
+        status: COMPLETED
+        Full date: {count: 5838, '%': 100.0}
+        Year and month: {count: 0, '%': 0.0}
+        Year only: {count: 0, '%': 0.0}
+      - name: Date format diagnosis.diagnosis_end_date
+        status: PASS
+        records checked: 5838
+        invalid values: {}
+    relapse.relapse_start_date:
+      status: PASS
+      results:
+      - name: Completeness | relapse.relapse_start_date
+        status: COMPLETED
+        total records: 24147
+        mapped values: {count: 24147, '%': 100.0}
+        unmapped values: {count: 0, '%': 0.0}
+        null values: {count: 0, '%': 0.0}
+        null raw values: {count: 0, '%': 0.0}
+      - name: Unmapped values | relapse.relapse_start_date. This check reports raw
+          values that don't have a respective mapped value. records_checked indicates
+          the sum of mapped and unmapped values.
+        status: PASS
+        records checked: 24147
+        invalid values: {}
+      - name: Date precision relapse.relapse_start_date
+        status: COMPLETED
+        Full date: {count: 24147, '%': 100.0}
+        Year and month: {count: 0, '%': 0.0}
+        Year only: {count: 0, '%': 0.0}
+      - name: Date format relapse.relapse_start_date
+        status: PASS
+        records checked: 24147
+        invalid values: {}
+    drug_exposure.drug_start_date:
+      status: PASS
+      results:
+      - name: Completeness | drug_exposure.drug_start_date
+        status: COMPLETED
+        total records: 9724
+        mapped values: {count: 9724, '%': 100.0}
+        unmapped values: {count: 0, '%': 0.0}
+        null values: {count: 0, '%': 0.0}
+        null raw values: {count: 0, '%': 0.0}
+      - name: Unmapped values | drug_exposure.drug_start_date. This check reports
+          raw values that don't have a respective mapped value. records_checked indicates
+          the sum of mapped and unmapped values.
+        status: PASS
+        records checked: 9724
+        invalid values: {}
+      - name: Date precision drug_exposure.drug_start_date
+        status: COMPLETED
+        Full date: {count: 9724, '%': 100.0}
+        Year and month: {count: 0, '%': 0.0}
+        Year only: {count: 0, '%': 0.0}
+      - name: Date format drug_exposure.drug_start_date
+        status: PASS
+        records checked: 9724
+        invalid values: {}
+    drug_exposure.drug_end_date:
+      status: PASS
+      results:
+      - name: Completeness | drug_exposure.drug_end_date
+        status: COMPLETED
+        total records: 9724
+        mapped values: {count: 6684, '%': 68.74}
+        unmapped values: {count: 0, '%': 0.0}
+        null values: {count: 3040, '%': 31.26}
+        null raw values: {count: 3040, '%': 31.26}
+      - name: Unmapped values | drug_exposure.drug_end_date. This check reports raw
+          values that don't have a respective mapped value. records_checked indicates
+          the sum of mapped and unmapped values.
+        status: PASS
+        records checked: 6684
+        invalid values: {}
+      - name: Date precision drug_exposure.drug_end_date
+        status: COMPLETED
+        Full date: {count: 6684, '%': 100.0}
+        Year and month: {count: 0, '%': 0.0}
+        Year only: {count: 0, '%': 0.0}
+      - name: Date format drug_exposure.drug_end_date
+        status: PASS
+        records checked: 6684
+        invalid values: {}
+    observation.observation_date:
+      status: PASS
+      results:
+      - name: Completeness | observation.observation_date
+        status: COMPLETED
+        total records: 320771
+        mapped values: {count: 320771, '%': 100.0}
+        unmapped values: {count: 0, '%': 0.0}
+        null values: {count: 0, '%': 0.0}
+        null raw values: {count: 0, '%': 0.0}
+      - name: Unmapped values | observation.observation_date. This check reports raw
+          values that don't have a respective mapped value. records_checked indicates
+          the sum of mapped and unmapped values.
+        status: PASS
+        records checked: 320771
+        invalid values: {}
+      - name: Date precision observation.observation_date
+        status: COMPLETED
+        Full date: {count: 320771, '%': 100.0}
+        Year and month: {count: 0, '%': 0.0}
+        Year only: {count: 0, '%': 0.0}
+      - name: Date format observation.observation_date
+        status: PASS
+        records checked: 320771
+        invalid values: {}
+    measurement.measurement_date:
+      status: PASS
+      results:
+      - name: Completeness | measurement.measurement_date
+        status: COMPLETED
+        total records: 55904
+        mapped values: {count: 55904, '%': 100.0}
+        unmapped values: {count: 0, '%': 0.0}
+        null values: {count: 0, '%': 0.0}
+        null raw values: {count: 0, '%': 0.0}
+      - name: Unmapped values | measurement.measurement_date. This check reports raw
+          values that don't have a respective mapped value. records_checked indicates
+          the sum of mapped and unmapped values.
+        status: PASS
+        records checked: 55904
+        invalid values: {}
+      - name: Date precision measurement.measurement_date
+        status: COMPLETED
+        Full date: {count: 55904, '%': 100.0}
+        Year and month: {count: 0, '%': 0.0}
+        Year only: {count: 0, '%': 0.0}
+      - name: Date format measurement.measurement_date
+        status: PASS
+        records checked: 55904
+        invalid values: {}
+    biosample.collection_date:
+      status: PASS
+      results:
+      - name: Completeness | biosample.collection_date
+        status: COMPLETED
+        total records: 25
+        mapped values: {count: 25, '%': 100.0}
+        unmapped values: {count: 0, '%': 0.0}
+        null values: {count: 0, '%': 0.0}
+        null raw values: {count: 0, '%': 0.0}
+      - name: Unmapped values | biosample.collection_date. This check reports raw
+          values that don't have a respective mapped value. records_checked indicates
+          the sum of mapped and unmapped values.
+        status: PASS
+        records checked: 25
+        invalid values: {}
+      - name: Date precision biosample.collection_date
+        status: COMPLETED
+        Full date: {count: 25, '%': 100.0}
+        Year and month: {count: 0, '%': 0.0}
+        Year only: {count: 0, '%': 0.0}
+      - name: Date format biosample.collection_date
+        status: PASS
+        records checked: 25
+        invalid values: {}
+    biosample.visit_date:
+      status: PASS
+      results:
+      - name: Completeness | biosample.visit_date
+        status: COMPLETED
+        total records: 25
+        mapped values: {count: 25, '%': 100.0}
+        unmapped values: {count: 0, '%': 0.0}
+        null values: {count: 0, '%': 0.0}
+        null raw values: {count: 0, '%': 0.0}
+      - name: Unmapped values | biosample.visit_date. This check reports raw values
+          that don't have a respective mapped value. records_checked indicates the
+          sum of mapped and unmapped values.
+        status: PASS
+        records checked: 25
+        invalid values: {}
+      - name: Date precision biosample.visit_date
+        status: COMPLETED
+        Full date: {count: 25, '%': 100.0}
+        Year and month: {count: 0, '%': 0.0}
+        Year only: {count: 0, '%': 0.0}
+      - name: Date format biosample.visit_date
+        status: PASS
+        records checked: 25
+        invalid values: {}
+  date fields (no data):
+    relapse.relapse_end_date:
+      status: NO DATA TO CHECK
+      results:
+      - {name: Completeness | relapse.relapse_end_date, status: NO DATA TO CHECK}
+      - name: Unmapped values | relapse.relapse_end_date. This check reports raw values
+          that don't have a respective mapped value. records_checked indicates the
+          sum of mapped and unmapped values.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+      - {name: Date precision relapse.relapse_end_date, status: NO DATA TO CHECK}
+      - name: Date format relapse.relapse_end_date
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+    procedure.procedure_start_date:
+      status: NO DATA TO CHECK
+      results:
+      - {name: Completeness | procedure.procedure_start_date, status: NO DATA TO CHECK}
+      - name: Unmapped values | procedure.procedure_start_date. This check reports
+          raw values that don't have a respective mapped value. records_checked indicates
+          the sum of mapped and unmapped values.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+      - {name: Date precision procedure.procedure_start_date, status: NO DATA TO CHECK}
+      - name: Date format procedure.procedure_start_date
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+    procedure.procedure_end_date:
+      status: NO DATA TO CHECK
+      results:
+      - {name: Completeness | procedure.procedure_end_date, status: NO DATA TO CHECK}
+      - name: Unmapped values | procedure.procedure_end_date. This check reports raw
+          values that don't have a respective mapped value. records_checked indicates
+          the sum of mapped and unmapped values.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+      - {name: Date precision procedure.procedure_end_date, status: NO DATA TO CHECK}
+      - name: Date format procedure.procedure_end_date
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+    symptom.symptom_start_date:
+      status: NO DATA TO CHECK
+      results:
+      - {name: Completeness | symptom.symptom_start_date, status: NO DATA TO CHECK}
+      - name: Unmapped values | symptom.symptom_start_date. This check reports raw
+          values that don't have a respective mapped value. records_checked indicates
+          the sum of mapped and unmapped values.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+      - {name: Date precision symptom.symptom_start_date, status: NO DATA TO CHECK}
+      - name: Date format symptom.symptom_start_date
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+    symptom.symptom_end_date:
+      status: NO DATA TO CHECK
+      results:
+      - {name: Completeness | symptom.symptom_end_date, status: NO DATA TO CHECK}
+      - name: Unmapped values | symptom.symptom_end_date. This check reports raw values
+          that don't have a respective mapped value. records_checked indicates the
+          sum of mapped and unmapped values.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+      - {name: Date precision symptom.symptom_end_date, status: NO DATA TO CHECK}
+      - name: Date format symptom.symptom_end_date
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+  controlled vocabulary fields:
+    person.sex:
+      status: PASS
+      results:
+      - name: Completeness | person.sex
+        status: COMPLETED
+        total records: 6328
+        mapped values: {count: 6328, '%': 100.0}
+        unmapped values: {count: 0, '%': 0.0}
+        null values: NOT APPLICABLE
+        null raw values: {count: 0, '%': 0.0}
+      - name: Unmapped values | person.sex. This check reports raw values that don't
+          have a respective mapped value. records_checked indicates the sum of mapped
+          and unmapped values.
+        status: PASS
+        records checked: 6328
+        invalid values: {}
+      - name: Controlled terms mapping | person.sex. Any values that are not part
+          of the controlled terminology of person.sex are reported.
+        status: PASS
+        records checked: 6328
+        invalid values: {}
+    person.race:
+      status: PASS
+      results:
+      - name: Completeness | person.race
+        status: COMPLETED
+        total records: 6328
+        mapped values: {count: 2282, '%': 36.06}
+        unmapped values: {count: 0, '%': 0.0}
+        null values: {count: 4046, '%': 63.94}
+        null raw values: {count: 4046, '%': 63.94}
+      - name: Unmapped values | person.race. This check reports raw values that don't
+          have a respective mapped value. records_checked indicates the sum of mapped
+          and unmapped values.
+        status: PASS
+        records checked: 2282
+        invalid values: {}
+      - name: Controlled terms mapping | person.race. Any values that are not part
+          of the controlled terminology of person.race are reported.
+        status: PASS
+        records checked: 2282
+        invalid values: {}
+    person.death_status:
+      status: PASS
+      results:
+      - name: Completeness | person.death_status
+        status: COMPLETED
+        total records: 6328
+        mapped values: {count: 21, '%': 0.33}
+        unmapped values: {count: 0, '%': 0.0}
+        null values: {count: 6307, '%': 99.67}
+        null raw values: {count: 6307, '%': 99.67}
+      - name: Unmapped values | person.death_status. This check reports raw values
+          that don't have a respective mapped value. records_checked indicates the
+          sum of mapped and unmapped values.
+        status: PASS
+        records checked: 21
+        invalid values: {}
+      - name: Controlled terms mapping | person.death_status. Any values that are
+          not part of the controlled terminology of person.death_status are reported.
+        status: PASS
+        records checked: 21
+        invalid values: {}
+    person.employment_status:
+      status: PASS
+      results:
+      - name: Completeness | person.employment_status
+        status: COMPLETED
+        total records: 6328
+        mapped values: {count: 6328, '%': 100.0}
+        unmapped values: {count: 0, '%': 0.0}
+        null values: {count: 0, '%': 0.0}
+        null raw values: {count: 2635, '%': 41.64}
+      - name: Unmapped values | person.employment_status. This check reports raw values
+          that don't have a respective mapped value. records_checked indicates the
+          sum of mapped and unmapped values.
+        status: PASS
+        records checked: 3693
+        invalid values: {}
+      - name: Controlled terms mapping | person.employment_status. Any values that
+          are not part of the controlled terminology of person.employment_status are
+          reported.
+        status: PASS
+        records checked: 6328
+        invalid values: {}
+    person.employment_type:
+      status: PASS
+      results:
+      - name: Completeness | person.employment_type
+        status: COMPLETED
+        total records: 6328
+        mapped values: {count: 6328, '%': 100.0}
+        unmapped values: {count: 0, '%': 0.0}
+        null values: {count: 0, '%': 0.0}
+        null raw values: {count: 2635, '%': 41.64}
+      - name: Unmapped values | person.employment_type. This check reports raw values
+          that don't have a respective mapped value. records_checked indicates the
+          sum of mapped and unmapped values.
+        status: PASS
+        records checked: 3693
+        invalid values: {}
+      - name: Controlled terms mapping | person.employment_type. Any values that are
+          not part of the controlled terminology of person.employment_type are reported.
+        status: PASS
+        records checked: 6328
+        invalid values: {}
+    person.inactivity_reason:
+      status: PASS
+      results:
+      - name: Completeness | person.inactivity_reason
+        status: COMPLETED
+        total records: 6328
+        mapped values: {count: 6328, '%': 100.0}
+        unmapped values: {count: 0, '%': 0.0}
+        null values: {count: 0, '%': 0.0}
+        null raw values: {count: 2635, '%': 41.64}
+      - name: Unmapped values | person.inactivity_reason. This check reports raw values
+          that don't have a respective mapped value. records_checked indicates the
+          sum of mapped and unmapped values.
+        status: PASS
+        records checked: 3693
+        invalid values: {}
+      - name: Controlled terms mapping | person.inactivity_reason. Any values that
+          are not part of the controlled terminology of person.inactivity_reason are
+          reported.
+        status: PASS
+        records checked: 6328
+        invalid values: {}
+    person.education_level:
+      status: PASS
+      results:
+      - name: Completeness | person.education_level
+        status: COMPLETED
+        total records: 6328
+        mapped values: {count: 6328, '%': 100.0}
+        unmapped values: {count: 0, '%': 0.0}
+        null values: {count: 0, '%': 0.0}
+        null raw values: {count: 4672, '%': 73.83}
+      - name: Unmapped values | person.education_level. This check reports raw values
+          that don't have a respective mapped value. records_checked indicates the
+          sum of mapped and unmapped values.
+        status: PASS
+        records checked: 1656
+        invalid values: {}
+      - name: Controlled terms mapping | person.education_level. Any values that are
+          not part of the controlled terminology of person.education_level are reported.
+        status: PASS
+        records checked: 6328
+        invalid values: {}
+    person.smoking_status:
+      status: PASS
+      results:
+      - name: Completeness | person.smoking_status
+        status: COMPLETED
+        total records: 6328
+        mapped values: {count: 5429, '%': 85.79}
+        unmapped values: {count: 0, '%': 0.0}
+        null values: {count: 899, '%': 14.21}
+        null raw values: {count: 6328, '%': 100.0}
+      - name: Unmapped values | person.smoking_status. This check reports raw values
+          that don't have a respective mapped value. records_checked indicates the
+          sum of mapped and unmapped values.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+      - name: Controlled terms mapping | person.smoking_status. Any values that are
+          not part of the controlled terminology of person.smoking_status are reported.
+        status: PASS
+        records checked: 5429
+        invalid values: {}
+    diagnosis.diagnosis:
+      status: PASS
+      results:
+      - name: Completeness | diagnosis.diagnosis
+        status: COMPLETED
+        total records: 10855
+        mapped values: {count: 10855, '%': 100.0}
+        unmapped values: {count: 0, '%': 0.0}
+        null values: NOT APPLICABLE
+        null raw values: {count: 358, '%': 3.3}
+      - name: Unmapped values | diagnosis.diagnosis. This check reports raw values
+          that don't have a respective mapped value. records_checked indicates the
+          sum of mapped and unmapped values.
+        status: PASS
+        records checked: 10497
+        invalid values: {}
+      - name: Controlled terms mapping | diagnosis.diagnosis. Any values that are
+          not part of the controlled terminology of diagnosis.diagnosis are reported.
+        status: PASS
+        records checked: 10855
+        invalid values: {}
+    diagnosis.ms_subtype:
+      status: PASS
+      results:
+      - name: Completeness | diagnosis.ms_subtype
+        status: COMPLETED
+        total records: 10855
+        mapped values: {count: 5966, '%': 54.96}
+        unmapped values: {count: 0, '%': 0.0}
+        null values: {count: 4889, '%': 45.04}
+        null raw values: {count: 358, '%': 3.3}
+      - name: Unmapped values | diagnosis.ms_subtype. This check reports raw values
+          that don't have a respective mapped value. records_checked indicates the
+          sum of mapped and unmapped values.
+        status: PASS
+        records checked: 10497
+        invalid values: {}
+      - name: Controlled terms mapping | diagnosis.ms_subtype. Any values that are
+          not part of the controlled terminology of diagnosis.ms_subtype are reported.
+        status: PASS
+        records checked: 5966
+        invalid values: {}
+    drug_exposure.drug:
+      status: PASS
+      results:
+      - name: Completeness | drug_exposure.drug
+        status: COMPLETED
+        total records: 9724
+        mapped values: {count: 9724, '%': 100.0}
+        unmapped values: {count: 0, '%': 0.0}
+        null values: NOT APPLICABLE
+        null raw values: {count: 0, '%': 0.0}
+      - name: Unmapped values | drug_exposure.drug. This check reports raw values
+          that don't have a respective mapped value. records_checked indicates the
+          sum of mapped and unmapped values.
+        status: PASS
+        records checked: 9724
+        invalid values: {}
+      - name: Controlled terms mapping | drug_exposure.drug. Any values that are not
+          part of the controlled terminology of drug_exposure.drug are reported.
+        status: PASS
+        records checked: 9724
+        invalid values: {}
+    drug_exposure.drug_identifier:
+      status: FAIL
+      results:
+      - name: Completeness | drug_exposure.drug_identifier
+        status: COMPLETED
+        total records: 9724
+        mapped values: {count: 9682, '%': 99.57}
+        unmapped values: NOT APPLICABLE
+        null values: {count: 42, '%': 0.43}
+        null raw values: {count: 0, '%': 0.0}
+      - name: Unmapped values | drug_exposure.drug_identifier. This check reports
+          raw values that don't have a respective mapped value. records_checked indicates
+          the sum of mapped and unmapped values.
+        status: FAIL
+        records checked: 9724
+        invalid values: {Clinical Trial Drug: 25, IVIG: 17}
+      - name: Controlled terms mapping | drug_exposure.drug_identifier. Any values
+          that are not part of the controlled terminology of drug_exposure.drug_identifier
+          are reported.
+        status: PASS
+        records checked: 9682
+        invalid values: {}
+    drug_exposure.posology_unit:
+      status: FAIL
+      results:
+      - name: Completeness | drug_exposure.posology_unit
+        status: COMPLETED
+        total records: 9724
+        mapped values: {count: 9699, '%': 99.74}
+        unmapped values: {count: 25, '%': 0.26}
+        null values: {count: 0, '%': 0.0}
+        null raw values: {count: 0, '%': 0.0}
+      - name: Unmapped values | drug_exposure.posology_unit. This check reports raw
+          values that don't have a respective mapped value. records_checked indicates
+          the sum of mapped and unmapped values.
+        status: FAIL
+        records checked: 9724
+        invalid values: {Clinical Trial Drug: 25}
+      - name: Controlled terms mapping | drug_exposure.posology_unit. Any values that
+          are not part of the controlled terminology of drug_exposure.posology_unit
+          are reported.
+        status: PASS
+        records checked: 9699
+        invalid values: {}
+    drug_exposure.posology_route:
+      status: FAIL
+      results:
+      - name: Completeness | drug_exposure.posology_route
+        status: COMPLETED
+        total records: 9724
+        mapped values: {count: 9699, '%': 99.74}
+        unmapped values: {count: 25, '%': 0.26}
+        null values: {count: 0, '%': 0.0}
+        null raw values: {count: 0, '%': 0.0}
+      - name: Unmapped values | drug_exposure.posology_route. This check reports raw
+          values that don't have a respective mapped value. records_checked indicates
+          the sum of mapped and unmapped values.
+        status: FAIL
+        records checked: 9724
+        invalid values: {Clinical Trial Drug: 25}
+      - name: Controlled terms mapping | drug_exposure.posology_route. Any values
+          that are not part of the controlled terminology of drug_exposure.posology_route
+          are reported.
+        status: PASS
+        records checked: 9699
+        invalid values: {}
+    drug_exposure.posology_frequency:
+      status: FAIL
+      results:
+      - name: Completeness | drug_exposure.posology_frequency
+        status: COMPLETED
+        total records: 9724
+        mapped values: {count: 9699, '%': 99.74}
+        unmapped values: {count: 25, '%': 0.26}
+        null values: {count: 0, '%': 0.0}
+        null raw values: {count: 0, '%': 0.0}
+      - name: Unmapped values | drug_exposure.posology_frequency. This check reports
+          raw values that don't have a respective mapped value. records_checked indicates
+          the sum of mapped and unmapped values.
+        status: FAIL
+        records checked: 9724
+        invalid values: {Clinical Trial Drug: 25}
+      - name: Controlled terms mapping | drug_exposure.posology_frequency. Any values
+          that are not part of the controlled terminology of drug_exposure.posology_frequency
+          are reported.
+        status: PASS
+        records checked: 9699
+        invalid values: {}
+    drug_exposure.stop_reason:
+      status: PASS
+      results:
+      - name: Completeness | drug_exposure.stop_reason
+        status: COMPLETED
+        total records: 9724
+        mapped values: {count: 5835, '%': 60.01}
+        unmapped values: {count: 0, '%': 0.0}
+        null values: {count: 3889, '%': 39.99}
+        null raw values: {count: 3889, '%': 39.99}
+      - name: Unmapped values | drug_exposure.stop_reason. This check reports raw
+          values that don't have a respective mapped value. records_checked indicates
+          the sum of mapped and unmapped values.
+        status: PASS
+        records checked: 5835
+        invalid values: {}
+      - name: Controlled terms mapping | drug_exposure.stop_reason. Any values that
+          are not part of the controlled terminology of drug_exposure.stop_reason
+          are reported.
+        status: PASS
+        records checked: 5835
+        invalid values: {}
+    observation.observation:
+      status: PASS
+      results:
+      - name: Completeness | observation.observation
+        status: COMPLETED
+        total records: 320771
+        mapped values: {count: 320771, '%': 100.0}
+        unmapped values: {count: 0, '%': 0.0}
+        null values: NOT APPLICABLE
+        null raw values: {count: 0, '%': 0.0}
+      - name: Unmapped values | observation.observation. This check reports raw values
+          that don't have a respective mapped value. records_checked indicates the
+          sum of mapped and unmapped values.
+        status: PASS
+        records checked: 320771
+        invalid values: {}
+      - name: Controlled terms mapping | observation.observation. Any values that
+          are not part of the controlled terminology of observation.observation are
+          reported.
+        status: PASS
+        records checked: 320771
+        invalid values: {}
+    observation.value_as_string:
+      status: COMPLETED
+      results:
+      - name: Completeness | observation.value_as_string
+        status: COMPLETED
+        total records: 320771
+        mapped values: {count: 320771, '%': 100.0}
+        unmapped values: NOT APPLICABLE
+        null values: {count: 0, '%': 0.0}
+        null raw values: NOT APPLICABLE
+      - name: Unmapped values | observation.value_as_string. This check reports raw
+          values that don't have a respective mapped value. records_checked indicates
+          the sum of mapped and unmapped values.
+        status: NO DATA TO CHECK
+        records checked: null
+        invalid values: {}
+    observation.method:
+      status: PASS
+      results:
+      - name: Completeness | observation.method
+        status: COMPLETED
+        total records: 320771
+        mapped values: {count: 320771, '%': 100.0}
+        unmapped values: {count: 0, '%': 0.0}
+        null values: {count: 0, '%': 0.0}
+        null raw values: {count: 0, '%': 0.0}
+      - name: Unmapped values | observation.method. This check reports raw values
+          that don't have a respective mapped value. records_checked indicates the
+          sum of mapped and unmapped values.
+        status: PASS
+        records checked: 320771
+        invalid values: {}
+      - name: Controlled terms mapping | observation.method. Any values that are not
+          part of the controlled terminology of observation.method are reported.
+        status: PASS
+        records checked: 320771
+        invalid values: {}
+    measurement.measurement:
+      status: PASS
+      results:
+      - name: Completeness | measurement.measurement
+        status: COMPLETED
+        total records: 55904
+        mapped values: {count: 55904, '%': 100.0}
+        unmapped values: {count: 0, '%': 0.0}
+        null values: NOT APPLICABLE
+        null raw values: {count: 26667, '%': 47.7}
+      - name: Unmapped values | measurement.measurement. This check reports raw values
+          that don't have a respective mapped value. records_checked indicates the
+          sum of mapped and unmapped values.
+        status: PASS
+        records checked: 29237
+        invalid values: {}
+      - name: Controlled terms mapping | measurement.measurement. Any values that
+          are not part of the controlled terminology of measurement.measurement are
+          reported.
+        status: PASS
+        records checked: 55904
+        invalid values: {}
+    measurement.value_as_string:
+      status: COMPLETED
+      results:
+      - name: Completeness | measurement.value_as_string
+        status: COMPLETED
+        total records: 55904
+        mapped values: {count: 40574, '%': 72.58}
+        unmapped values: NOT APPLICABLE
+        null values: {count: 15330, '%': 27.42}
+        null raw values: NOT APPLICABLE
+      - name: Unmapped values | measurement.value_as_string. This check reports raw
+          values that don't have a respective mapped value. records_checked indicates
+          the sum of mapped and unmapped values.
+        status: NO DATA TO CHECK
+        records checked: null
+        invalid values: {}
+    measurement.unit:
+      status: PASS
+      results:
+      - name: Completeness | measurement.unit
+        status: COMPLETED
+        total records: 55904
+        mapped values: {count: 28662, '%': 51.27}
+        unmapped values: {count: 0, '%': 0.0}
+        null values: {count: 27242, '%': 48.73}
+        null raw values: {count: 53909, '%': 96.43}
+      - name: Unmapped values | measurement.unit. This check reports raw values that
+          don't have a respective mapped value. records_checked indicates the sum
+          of mapped and unmapped values.
+        status: PASS
+        records checked: 1995
+        invalid values: {}
+      - name: Controlled terms mapping | measurement.unit. Any values that are not
+          part of the controlled terminology of measurement.unit are reported.
+        status: PASS
+        records checked: 28662
+        invalid values: {}
+    biosample.visit_type:
+      status: PASS
+      results:
+      - name: Completeness | biosample.visit_type
+        status: COMPLETED
+        total records: 25
+        mapped values: {count: 25, '%': 100.0}
+        unmapped values: {count: 0, '%': 0.0}
+        null values: {count: 0, '%': 0.0}
+        null raw values: {count: 8, '%': 32.0}
+      - name: Unmapped values | biosample.visit_type. This check reports raw values
+          that don't have a respective mapped value. records_checked indicates the
+          sum of mapped and unmapped values.
+        status: PASS
+        records checked: 17
+        invalid values: {}
+      - name: Controlled terms mapping | biosample.visit_type. Any values that are
+          not part of the controlled terminology of biosample.visit_type are reported.
+        status: PASS
+        records checked: 25
+        invalid values: {}
+    biosample.specimen_type:
+      status: PASS
+      results:
+      - name: Completeness | biosample.specimen_type
+        status: COMPLETED
+        total records: 25
+        mapped values: {count: 8, '%': 32.0}
+        unmapped values: {count: 0, '%': 0.0}
+        null values: {count: 17, '%': 68.0}
+        null raw values: {count: 17, '%': 68.0}
+      - name: Unmapped values | biosample.specimen_type. This check reports raw values
+          that don't have a respective mapped value. records_checked indicates the
+          sum of mapped and unmapped values.
+        status: PASS
+        records checked: 8
+        invalid values: {}
+      - name: Controlled terms mapping | biosample.specimen_type. Any values that
+          are not part of the controlled terminology of biosample.specimen_type are
+          reported.
+        status: PASS
+        records checked: 8
+        invalid values: {}
+    biosample.intended_use:
+      status: PASS
+      results:
+      - name: Completeness | biosample.intended_use
+        status: COMPLETED
+        total records: 25
+        mapped values: {count: 25, '%': 100.0}
+        unmapped values: {count: 0, '%': 0.0}
+        null values: {count: 0, '%': 0.0}
+        null raw values: {count: 25, '%': 100.0}
+      - name: Unmapped values | biosample.intended_use. This check reports raw values
+          that don't have a respective mapped value. records_checked indicates the
+          sum of mapped and unmapped values.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+      - name: Controlled terms mapping | biosample.intended_use. Any values that are
+          not part of the controlled terminology of biosample.intended_use are reported.
+        status: PASS
+        records checked: 25
+        invalid values: {}
+  controlled vocabulary fields (no data):
+    person.country:
+      status: NO DATA TO CHECK
+      results:
+      - {name: Completeness | person.country, status: NO DATA TO CHECK}
+      - name: Unmapped values | person.country. This check reports raw values that
+          don't have a respective mapped value. records_checked indicates the sum
+          of mapped and unmapped values.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+      - name: Controlled terms mapping | person.country. Any values that are not part
+          of the controlled terminology of person.country are reported.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+    person.ethnicity:
+      status: NO DATA TO CHECK
+      results:
+      - {name: Completeness | person.ethnicity, status: NO DATA TO CHECK}
+      - name: Unmapped values | person.ethnicity. This check reports raw values that
+          don't have a respective mapped value. records_checked indicates the sum
+          of mapped and unmapped values.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+      - name: Controlled terms mapping | person.ethnicity. Any values that are not
+          part of the controlled terminology of person.ethnicity are reported.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+    relapse.evidence:
+      status: NO DATA TO CHECK
+      results:
+      - {name: Completeness | relapse.evidence, status: NO DATA TO CHECK}
+      - name: Unmapped values | relapse.evidence. This check reports raw values that
+          don't have a respective mapped value. records_checked indicates the sum
+          of mapped and unmapped values.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+      - name: Controlled terms mapping | relapse.evidence. Any values that are not
+          part of the controlled terminology of relapse.evidence are reported.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+    relapse.recovery:
+      status: NO DATA TO CHECK
+      results:
+      - {name: Completeness | relapse.recovery, status: NO DATA TO CHECK}
+      - name: Unmapped values | relapse.recovery. This check reports raw values that
+          don't have a respective mapped value. records_checked indicates the sum
+          of mapped and unmapped values.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+      - name: Controlled terms mapping | relapse.recovery. Any values that are not
+          part of the controlled terminology of relapse.recovery are reported.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+    relapse.severity:
+      status: NO DATA TO CHECK
+      results:
+      - {name: Completeness | relapse.severity, status: NO DATA TO CHECK}
+      - name: Unmapped values | relapse.severity. This check reports raw values that
+          don't have a respective mapped value. records_checked indicates the sum
+          of mapped and unmapped values.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+      - name: Controlled terms mapping | relapse.severity. Any values that are not
+          part of the controlled terminology of relapse.severity are reported.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+    relapse.neurological_confirmation:
+      status: NO DATA TO CHECK
+      results:
+      - {name: Completeness | relapse.neurological_confirmation, status: NO DATA TO
+          CHECK}
+      - name: Unmapped values | relapse.neurological_confirmation. This check reports
+          raw values that don't have a respective mapped value. records_checked indicates
+          the sum of mapped and unmapped values.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+      - name: Controlled terms mapping | relapse.neurological_confirmation. Any values
+          that are not part of the controlled terminology of relapse.neurological_confirmation
+          are reported.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+    diagnosis_method.method:
+      status: NO DATA TO CHECK
+      results:
+      - {name: Completeness | diagnosis_method.method, status: NO DATA TO CHECK}
+      - name: Unmapped values | diagnosis_method.method. This check reports raw values
+          that don't have a respective mapped value. records_checked indicates the
+          sum of mapped and unmapped values.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+      - name: Controlled terms mapping | diagnosis_method.method. Any values that
+          are not part of the controlled terminology of diagnosis_method.method are
+          reported.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+    procedure.procedure:
+      status: NO DATA TO CHECK
+      results:
+      - {name: Completeness | procedure.procedure, status: NO DATA TO CHECK}
+      - name: Unmapped values | procedure.procedure. This check reports raw values
+          that don't have a respective mapped value. records_checked indicates the
+          sum of mapped and unmapped values.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+      - name: Controlled terms mapping | procedure.procedure. Any values that are
+          not part of the controlled terminology of procedure.procedure are reported.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+    observation.unit:
+      status: NO DATA TO CHECK
+      results:
+      - {name: Completeness | observation.unit, status: NO DATA TO CHECK}
+      - name: Unmapped values | observation.unit. This check reports raw values that
+          don't have a respective mapped value. records_checked indicates the sum
+          of mapped and unmapped values.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+      - name: Controlled terms mapping | observation.unit. Any values that are not
+          part of the controlled terminology of observation.unit are reported.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+    observation.visit_type:
+      status: NO DATA TO CHECK
+      results:
+      - {name: Completeness | observation.visit_type, status: NO DATA TO CHECK}
+      - name: Unmapped values | observation.visit_type. This check reports raw values
+          that don't have a respective mapped value. records_checked indicates the
+          sum of mapped and unmapped values.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+      - name: Controlled terms mapping | observation.visit_type. Any values that are
+          not part of the controlled terminology of observation.visit_type are reported.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+    measurement.method:
+      status: NO DATA TO CHECK
+      results:
+      - {name: Completeness | measurement.method, status: NO DATA TO CHECK}
+      - name: Unmapped values | measurement.method. This check reports raw values
+          that don't have a respective mapped value. records_checked indicates the
+          sum of mapped and unmapped values.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+      - name: Controlled terms mapping | measurement.method. Any values that are not
+          part of the controlled terminology of measurement.method are reported.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+    measurement.visit_type:
+      status: NO DATA TO CHECK
+      results:
+      - {name: Completeness | measurement.visit_type, status: NO DATA TO CHECK}
+      - name: Unmapped values | measurement.visit_type. This check reports raw values
+          that don't have a respective mapped value. records_checked indicates the
+          sum of mapped and unmapped values.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+      - name: Controlled terms mapping | measurement.visit_type. Any values that are
+          not part of the controlled terminology of measurement.visit_type are reported.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+    symptom.symptom:
+      status: NO DATA TO CHECK
+      results:
+      - {name: Completeness | symptom.symptom, status: NO DATA TO CHECK}
+      - name: Unmapped values | symptom.symptom. This check reports raw values that
+          don't have a respective mapped value. records_checked indicates the sum
+          of mapped and unmapped values.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+      - name: Controlled terms mapping | symptom.symptom. Any values that are not
+          part of the controlled terminology of symptom.symptom are reported.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+    biosample.consent:
+      status: NO DATA TO CHECK
+      results:
+      - {name: Completeness | biosample.consent, status: NO DATA TO CHECK}
+      - name: Unmapped values | biosample.consent. This check reports raw values that
+          don't have a respective mapped value. records_checked indicates the sum
+          of mapped and unmapped values.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+      - name: Controlled terms mapping | biosample.consent. Any values that are not
+          part of the controlled terminology of biosample.consent are reported.
+        status: NO DATA TO CHECK
+        records checked: 0
+        invalid values: {}
+  numeric fields:
+    drug_exposure.posology_dose:
+      status: FAIL
+      results:
+      - name: Completeness | drug_exposure.posology_dose
+        status: COMPLETED
+        total records: 9724
+        mapped values: {count: 9701, '%': 99.76}
+        unmapped values: NOT APPLICABLE
+        null values: {count: 23, '%': 0.24}
+        null raw values: {count: 0, '%': 0.0}
+      - name: Unmapped values | drug_exposure.posology_dose. This check reports raw
+          values that don't have a respective mapped value. records_checked indicates
+          the sum of mapped and unmapped values.
+        status: FAIL
+        records checked: 9724
+        invalid values: {Clinical Trial Drug: 23}
+    observation.value_as_number:
+      status: PASS
+      results:
+      - name: Completeness | observation.value_as_number
+        status: COMPLETED
+        total records: 320771
+        mapped values: {count: 320771, '%': 100.0}
+        unmapped values: NOT APPLICABLE
+        null values: {count: 0, '%': 0.0}
+        null raw values: {count: 0, '%': 0.0}
+      - name: Unmapped values | observation.value_as_number. This check reports raw
+          values that don't have a respective mapped value. records_checked indicates
+          the sum of mapped and unmapped values.
+        status: PASS
+        records checked: 320771
+        invalid values: {}
+    measurement.value_as_number:
+      status: FAIL
+      results:
+      - name: Completeness | measurement.value_as_number
+        status: COMPLETED
+        total records: 55904
+        mapped values: {count: 41727, '%': 74.64}
+        unmapped values: NOT APPLICABLE
+        null values: {count: 14177, '%': 25.36}
+        null raw values: {count: 13335, '%': 23.85}
+      - name: Unmapped values | measurement.value_as_number. This check reports raw
+          values that don't have a respective mapped value. records_checked indicates
+          the sum of mapped and unmapped values.
+        status: FAIL
+        records checked: 42569
+        invalid values: {is_mri_worsening = Yes: 678, is_mri_worsening = No: 164}
+  numeric fields (no data):
+    relapse.duration:
+      status: NO DATA TO CHECK
+      results:
+      - {name: Completeness | relapse.duration, status: NO DATA TO CHECK}
+      - name: Unmapped values | relapse.duration. This check reports raw values that
+          don't have a respective mapped value. records_checked indicates the sum
+          of mapped and unmapped values.
+        status: NO DATA TO CHECK
+        records checked: null
+        invalid values: {}
+plausibility:
+  descriptive statistics:
+  - name: Observation period
+    status: COMPLETED
+    minimum: 0.0
+    maximum: 24403.0
+    mean: 5904.23
+    median: 5192.0
+    Q1: 3027.5
+    Q3: 8059.0
+    IQR: 5031.5
+    values: [0.0, 0.0, 0.0, 0.0, 0.0, 24.0, 25.0, 36.0, 45.0, 46.0, 51.0, 52.0, 71.0,
+      73.0, 78.0, 80.0, 92.0, 95.0, 114.0, 115.0, 127.0, 132.0, 133.0, 133.0, 137.0,
+      138.0, 138.0, 140.0, 170.0, 174.0, 176.0, 182.0, 195.0, 196.0, 205.0, 212.0,
+      225.0, 226.0, 232.0, 232.0, 233.0, 234.0, 237.0, 239.0, 249.0, 252.0, 264.0,
+      264.0, 267.0, 268.0, 273.0, 273.0, 278.0, 286.0, 286.0, 291.0, 297.0, 299.0,
+      302.0, 308.0, 309.0, 312.0, 313.0, 313.0, 315.0, 319.0, 320.0, 323.0, 323.0,
+      324.0, 335.0, 350.0, 354.0, 354.0, 357.0, 366.0, 367.0, 372.0, 375.0, 378.0,
+      384.0, 384.0, 388.0, 389.0, 392.0, 392.0, 399.0, 399.0, 402.0, 402.0, 403.0,
+      408.0, 410.0, 410.0, 414.0, 415.0, 415.0, 416.0, 424.0, 424.0, 429.0, 429.0,
+      432.0, 432.0, 434.0, 434.0, 435.0, 436.0, 445.0, 450.0, 453.0, 455.0, 457.0,
+      458.0, 476.0, 476.0, 476.0, 481.0, 490.0, 495.0, 496.0, 497.0, 503.0, 505.0,
+      507.0, 512.0, 512.0, 518.0, 525.0, 543.0, 550.0, 552.0, 554.0, 556.0, 558.0,
+      560.0, 562.0, 565.0, 565.0, 569.0, 570.0, 579.0, 579.0, 581.0, 581.0, 582.0,
+      589.0, 594.0, 596.0, 600.0, 605.0, 616.0, 620.0, 623.0, 623.0, 625.0, 625.0,
+      629.0, 633.0, 639.0, 639.0, 640.0, 642.0, 643.0, 645.0, 647.0, 648.0, 661.0,
+      662.0, 663.0, 664.0, 668.0, 671.0, 675.0, 677.0, 679.0, 682.0, 683.0, 684.0,
+      687.0, 689.0, 693.0, 693.0, 695.0, 697.0, 697.0, 698.0, 699.0, 699.0, 700.0,
+      700.0, 701.0, 703.0, 711.0, 714.0, 715.0, 715.0, 716.0, 717.0, 722.0, 723.0,
+      728.0, 731.0, 732.0, 735.0, 737.0, 737.0, 737.0, 737.0, 738.0, 738.0, 746.0,
+      749.0, 762.0, 763.0, 768.0, 769.0, 770.0, 771.0, 774.0, 776.0, 777.0, 783.0,
+      784.0, 785.0, 786.0, 788.0, 794.0, 804.0, 804.0, 804.0, 804.0, 809.0, 814.0,
+      821.0, 822.0, 823.0, 823.0, 826.0, 828.0, 831.0, 833.0, 833.0, 837.0, 837.0,
+      841.0, 842.0, 844.0, 844.0, 845.0, 846.0, 848.0, 849.0, 855.0, 856.0, 856.0,
+      857.0, 860.0, 864.0, 866.0, 867.0, 868.0, 870.0, 872.0, 874.0, 878.0, 879.0,
+      880.0, 882.0, 885.0, 890.0, 891.0, 891.0, 892.0, 894.0, 895.0, 895.0, 900.0,
+      904.0, 912.0, 912.0, 915.0, 917.0, 917.0, 921.0, 925.0, 928.0, 929.0, 932.0,
+      936.0, 938.0, 941.0, 942.0, 942.0, 945.0, 952.0, 955.0, 956.0, 960.0, 961.0,
+      962.0, 964.0, 964.0, 966.0, 967.0, 972.0, 980.0, 982.0, 982.0, 983.0, 984.0,
+      985.0, 988.0, 989.0, 989.0, 989.0, 992.0, 995.0, 997.0, 999.0, 1000.0, 1001.0,
+      1010.0, 1012.0, 1012.0, 1013.0, 1015.0, 1015.0, 1016.0, 1018.0, 1021.0, 1023.0,
+      1027.0, 1030.0, 1030.0, 1030.0, 1031.0, 1036.0, 1038.0, 1040.0, 1040.0, 1040.0,
+      1041.0, 1041.0, 1042.0, 1043.0, 1045.0, 1045.0, 1047.0, 1047.0, 1047.0, 1048.0,
+      1049.0, 1050.0, 1052.0, 1053.0, 1054.0, 1059.0, 1059.0, 1062.0, 1065.0, 1067.0,
+      1071.0, 1075.0, 1077.0, 1082.0, 1082.0, 1085.0, 1091.0, 1094.0, 1094.0, 1097.0,
+      1098.0, 1099.0, 1100.0, 1105.0, 1105.0, 1107.0, 1109.0, 1109.0, 1111.0, 1114.0,
+      1114.0, 1117.0, 1118.0, 1119.0, 1119.0, 1121.0, 1122.0, 1124.0, 1126.0, 1132.0,
+      1135.0, 1135.0, 1136.0, 1137.0, 1141.0, 1144.0, 1144.0, 1145.0, 1153.0, 1154.0,
+      1157.0, 1157.0, 1158.0, 1166.0, 1168.0, 1170.0, 1170.0, 1173.0, 1175.0, 1177.0,
+      1177.0, 1180.0, 1182.0, 1182.0, 1186.0, 1188.0, 1189.0, 1190.0, 1198.0, 1199.0,
+      1201.0, 1201.0, 1203.0, 1204.0, 1206.0, 1206.0, 1209.0, 1213.0, 1213.0, 1217.0,
+      1221.0, 1222.0, 1223.0, 1231.0, 1231.0, 1231.0, 1232.0, 1233.0, 1234.0, 1235.0,
+      1237.0, 1241.0, 1242.0, 1243.0, 1246.0, 1248.0, 1255.0, 1255.0, 1258.0, 1270.0,
+      1271.0, 1275.0, 1279.0, 1282.0, 1282.0, 1286.0, 1294.0, 1296.0, 1297.0, 1297.0,
+      1297.0, 1298.0, 1299.0, 1301.0, 1304.0, 1305.0, 1307.0, 1313.0, 1315.0, 1318.0,
+      1318.0, 1324.0, 1327.0, 1329.0, 1332.0, 1339.0, 1339.0, 1343.0, 1344.0, 1345.0,
+      1345.0, 1345.0, 1346.0, 1347.0, 1349.0, 1353.0, 1356.0, 1356.0, 1356.0, 1364.0,
+      1369.0, 1374.0, 1376.0, 1378.0, 1380.0, 1384.0, 1386.0, 1389.0, 1389.0, 1390.0,
+      1394.0, 1396.0, 1399.0, 1399.0, 1399.0, 1406.0, 1407.0, 1409.0, 1411.0, 1413.0,
+      1414.0, 1414.0, 1414.0, 1417.0, 1417.0, 1418.0, 1418.0, 1418.0, 1420.0, 1427.0,
+      1433.0, 1434.0, 1437.0, 1439.0, 1440.0, 1442.0, 1443.0, 1445.0, 1445.0, 1445.0,
+      1447.0, 1453.0, 1457.0, 1458.0, 1459.0, 1459.0, 1462.0, 1462.0, 1464.0, 1464.0,
+      1465.0, 1468.0, 1470.0, 1471.0, 1471.0, 1477.0, 1478.0, 1478.0, 1479.0, 1480.0,
+      1480.0, 1483.0, 1487.0, 1488.0, 1490.0, 1490.0, 1491.0, 1496.0, 1498.0, 1500.0,
+      1501.0, 1505.0, 1506.0, 1508.0, 1509.0, 1510.0, 1511.0, 1512.0, 1515.0, 1517.0,
+      1517.0, 1518.0, 1518.0, 1519.0, 1519.0, 1520.0, 1520.0, 1521.0, 1521.0, 1522.0,
+      1523.0, 1526.0, 1526.0, 1529.0, 1529.0, 1541.0, 1543.0, 1551.0, 1551.0, 1551.0,
+      1554.0, 1557.0, 1560.0, 1560.0, 1564.0, 1566.0, 1569.0, 1570.0, 1571.0, 1579.0,
+      1582.0, 1584.0, 1585.0, 1588.0, 1589.0, 1589.0, 1592.0, 1596.0, 1600.0, 1600.0,
+      1601.0, 1602.0, 1608.0, 1611.0, 1614.0, 1614.0, 1615.0, 1615.0, 1617.0, 1617.0,
+      1622.0, 1630.0, 1631.0, 1634.0, 1638.0, 1639.0, 1640.0, 1642.0, 1643.0, 1644.0,
+      1647.0, 1648.0, 1653.0, 1656.0, 1660.0, 1663.0, 1674.0, 1676.0, 1676.0, 1676.0,
+      1676.0, 1682.0, 1684.0, 1685.0, 1686.0, 1688.0, 1696.0, 1697.0, 1699.0, 1701.0,
+      1702.0, 1703.0, 1703.0, 1703.0, 1703.0, 1706.0, 1707.0, 1709.0, 1709.0, 1712.0,
+      1715.0, 1716.0, 1717.0, 1721.0, 1723.0, 1723.0, 1728.0, 1729.0, 1731.0, 1731.0,
+      1736.0, 1741.0, 1744.0, 1750.0, 1751.0, 1753.0, 1757.0, 1757.0, 1757.0, 1760.0,
+      1761.0, 1762.0, 1765.0, 1766.0, 1768.0, 1771.0, 1776.0, 1777.0, 1782.0, 1782.0,
+      1784.0, 1785.0, 1792.0, 1794.0, 1795.0, 1801.0, 1804.0, 1808.0, 1808.0, 1814.0,
+      1815.0, 1818.0, 1819.0, 1820.0, 1820.0, 1821.0, 1821.0, 1824.0, 1824.0, 1827.0,
+      1830.0, 1832.0, 1832.0, 1834.0, 1835.0, 1838.0, 1840.0, 1845.0, 1849.0, 1851.0,
+      1854.0, 1861.0, 1861.0, 1864.0, 1864.0, 1868.0, 1869.0, 1869.0, 1870.0, 1870.0,
+      1871.0, 1872.0, 1872.0, 1873.0, 1874.0, 1878.0, 1882.0, 1884.0, 1885.0, 1888.0,
+      1889.0, 1889.0, 1892.0, 1893.0, 1893.0, 1894.0, 1895.0, 1896.0, 1900.0, 1904.0,
+      1904.0, 1907.0, 1908.0, 1908.0, 1909.0, 1912.0, 1915.0, 1917.0, 1922.0, 1923.0,
+      1928.0, 1929.0, 1932.0, 1934.0, 1939.0, 1940.0, 1942.0, 1946.0, 1946.0, 1952.0,
+      1953.0, 1953.0, 1954.0, 1954.0, 1955.0, 1957.0, 1957.0, 1960.0, 1961.0, 1961.0,
+      1963.0, 1965.0, 1965.0, 1967.0, 1969.0, 1971.0, 1972.0, 1974.0, 1974.0, 1975.0,
+      1976.0, 1977.0, 1977.0, 1981.0, 1982.0, 1982.0, 1985.0, 1986.0, 1987.0, 1988.0,
+      1990.0, 1991.0, 1991.0, 1994.0, 1995.0, 1997.0, 1997.0, 1998.0, 1999.0, 1999.0,
+      2000.0, 2003.0, 2003.0, 2004.0, 2006.0, 2006.0, 2009.0, 2010.0, 2011.0, 2014.0,
+      2015.0, 2016.0, 2017.0, 2017.0, 2019.0, 2021.0, 2021.0, 2021.0, 2025.0, 2025.0,
+      2030.0, 2030.0, 2030.0, 2030.0, 2032.0, 2034.0, 2035.0, 2036.0, 2036.0, 2036.0,
+      2037.0, 2038.0, 2038.0, 2039.0, 2041.0, 2046.0, 2046.0, 2047.0, 2048.0, 2048.0,
+      2048.0, 2050.0, 2052.0, 2052.0, 2052.0, 2053.0, 2054.0, 2056.0, 2057.0, 2059.0,
+      2059.0, 2063.0, 2064.0, 2065.0, 2065.0, 2066.0, 2066.0, 2068.0, 2069.0, 2069.0,
+      2070.0, 2073.0, 2073.0, 2074.0, 2078.0, 2080.0, 2082.0, 2084.0, 2091.0, 2091.0,
+      2092.0, 2093.0, 2096.0, 2097.0, 2098.0, 2106.0, 2106.0, 2107.0, 2108.0, 2108.0,
+      2108.0, 2109.0, 2114.0, 2115.0, 2115.0, 2116.0, 2118.0, 2121.0, 2124.0, 2125.0,
+      2126.0, 2128.0, 2131.0, 2131.0, 2132.0, 2132.0, 2133.0, 2134.0, 2134.0, 2134.0,
+      2136.0, 2138.0, 2138.0, 2139.0, 2139.0, 2141.0, 2141.0, 2141.0, 2142.0, 2143.0,
+      2143.0, 2145.0, 2145.0, 2145.0, 2147.0, 2148.0, 2148.0, 2154.0, 2155.0, 2155.0,
+      2156.0, 2158.0, 2161.0, 2164.0, 2169.0, 2172.0, 2178.0, 2179.0, 2179.0, 2182.0,
+      2183.0, 2187.0, 2192.0, 2192.0, 2193.0, 2193.0, 2194.0, 2195.0, 2195.0, 2195.0,
+      2198.0, 2200.0, 2201.0, 2201.0, 2203.0, 2210.0, 2212.0, 2212.0, 2215.0, 2218.0,
+      2219.0, 2220.0, 2223.0, 2223.0, 2225.0, 2225.0, 2229.0, 2235.0, 2236.0, 2238.0,
+      2238.0, 2240.0, 2240.0, 2241.0, 2241.0, 2241.0, 2242.0, 2242.0, 2242.0, 2243.0,
+      2244.0, 2245.0, 2245.0, 2245.0, 2251.0, 2254.0, 2259.0, 2259.0, 2264.0, 2266.0,
+      2268.0, 2270.0, 2271.0, 2272.0, 2272.0, 2272.0, 2275.0, 2276.0, 2276.0, 2276.0,
+      2279.0, 2283.0, 2286.0, 2286.0, 2287.0, 2288.0, 2292.0, 2293.0, 2296.0, 2296.0,
+      2298.0, 2299.0, 2300.0, 2300.0, 2300.0, 2301.0, 2301.0, 2302.0, 2304.0, 2306.0,
+      2307.0, 2308.0, 2309.0, 2310.0, 2311.0, 2311.0, 2313.0, 2315.0, 2317.0, 2320.0,
+      2322.0, 2322.0, 2326.0, 2327.0, 2331.0, 2336.0, 2336.0, 2337.0, 2342.0, 2344.0,
+      2347.0, 2348.0, 2348.0, 2350.0, 2351.0, 2352.0, 2353.0, 2355.0, 2357.0, 2358.0,
+      2359.0, 2361.0, 2361.0, 2361.0, 2361.0, 2364.0, 2364.0, 2365.0, 2365.0, 2365.0,
+      2366.0, 2367.0, 2368.0, 2369.0, 2369.0, 2370.0, 2371.0, 2374.0, 2377.0, 2377.0,
+      2378.0, 2378.0, 2382.0, 2385.0, 2387.0, 2387.0, 2390.0, 2392.0, 2393.0, 2393.0,
+      2396.0, 2397.0, 2398.0, 2398.0, 2398.0, 2398.0, 2399.0, 2399.0, 2400.0, 2401.0,
+      2403.0, 2404.0, 2408.0, 2408.0, 2411.0, 2411.0, 2416.0, 2418.0, 2420.0, 2421.0,
+      2422.0, 2423.0, 2423.0, 2425.0, 2427.0, 2429.0, 2429.0, 2432.0, 2432.0, 2432.0,
+      2433.0, 2435.0, 2437.0, 2437.0, 2437.0, 2437.0, 2439.0, 2442.0, 2443.0, 2443.0,
+      2445.0, 2445.0, 2445.0, 2448.0, 2451.0, 2452.0, 2454.0, 2454.0, 2456.0, 2457.0,
+      2457.0, 2462.0, 2464.0, 2464.0, 2465.0, 2469.0, 2471.0, 2471.0, 2471.0, 2472.0,
+      2473.0, 2476.0, 2476.0, 2476.0, 2477.0, 2478.0, 2480.0, 2480.0, 2482.0, 2482.0,
+      2485.0, 2485.0, 2487.0, 2488.0, 2488.0, 2489.0, 2489.0, 2490.0, 2491.0, 2491.0,
+      2492.0, 2497.0, 2498.0, 2499.0, 2501.0, 2502.0, 2503.0, 2503.0, 2505.0, 2509.0,
+      2510.0, 2511.0, 2512.0, 2517.0, 2518.0, 2518.0, 2520.0, 2520.0, 2520.0, 2521.0,
+      2527.0, 2528.0, 2528.0, 2528.0, 2530.0, 2531.0, 2531.0, 2532.0, 2538.0, 2539.0,
+      2539.0, 2539.0, 2540.0, 2541.0, 2541.0, 2541.0, 2543.0, 2546.0, 2550.0, 2550.0,
+      2551.0, 2554.0, 2555.0, 2555.0, 2559.0, 2561.0, 2562.0, 2562.0, 2562.0, 2563.0,
+      2566.0, 2567.0, 2568.0, 2571.0, 2574.0, 2576.0, 2576.0, 2577.0, 2577.0, 2584.0,
+      2585.0, 2587.0, 2588.0, 2590.0, 2590.0, 2591.0, 2591.0, 2592.0, 2593.0, 2599.0,
+      2599.0, 2600.0, 2602.0, 2604.0, 2604.0, 2612.0, 2615.0, 2623.0, 2623.0, 2624.0,
+      2624.0, 2625.0, 2625.0, 2626.0, 2626.0, 2626.0, 2628.0, 2630.0, 2631.0, 2632.0,
+      2633.0, 2634.0, 2636.0, 2636.0, 2636.0, 2637.0, 2638.0, 2638.0, 2641.0, 2641.0,
+      2642.0, 2644.0, 2646.0, 2651.0, 2651.0, 2651.0, 2651.0, 2652.0, 2652.0, 2652.0,
+      2653.0, 2655.0, 2655.0, 2657.0, 2657.0, 2659.0, 2659.0, 2660.0, 2662.0, 2663.0,
+      2663.0, 2666.0, 2666.0, 2672.0, 2673.0, 2674.0, 2675.0, 2675.0, 2675.0, 2676.0,
+      2676.0, 2679.0, 2680.0, 2681.0, 2684.0, 2686.0, 2686.0, 2687.0, 2687.0, 2689.0,
+      2689.0, 2689.0, 2690.0, 2691.0, 2691.0, 2694.0, 2696.0, 2696.0, 2697.0, 2697.0,
+      2697.0, 2698.0, 2699.0, 2701.0, 2702.0, 2702.0, 2703.0, 2703.0, 2706.0, 2706.0,
+      2706.0, 2707.0, 2708.0, 2709.0, 2709.0, 2711.0, 2711.0, 2711.0, 2711.0, 2711.0,
+      2713.0, 2714.0, 2715.0, 2715.0, 2716.0, 2716.0, 2716.0, 2717.0, 2718.0, 2718.0,
+      2720.0, 2721.0, 2721.0, 2722.0, 2722.0, 2723.0, 2724.0, 2726.0, 2726.0, 2729.0,
+      2729.0, 2739.0, 2740.0, 2740.0, 2741.0, 2741.0, 2743.0, 2744.0, 2745.0, 2745.0,
+      2745.0, 2746.0, 2747.0, 2748.0, 2749.0, 2749.0, 2751.0, 2755.0, 2758.0, 2759.0,
+      2764.0, 2764.0, 2766.0, 2766.0, 2769.0, 2770.0, 2771.0, 2771.0, 2772.0, 2772.0,
+      2773.0, 2773.0, 2774.0, 2778.0, 2779.0, 2781.0, 2785.0, 2786.0, 2787.0, 2790.0,
+      2790.0, 2790.0, 2793.0, 2793.0, 2793.0, 2794.0, 2795.0, 2795.0, 2798.0, 2799.0,
+      2800.0, 2801.0, 2802.0, 2803.0, 2804.0, 2805.0, 2809.0, 2810.0, 2811.0, 2813.0,
+      2816.0, 2817.0, 2819.0, 2819.0, 2821.0, 2821.0, 2827.0, 2829.0, 2829.0, 2830.0,
+      2832.0, 2832.0, 2833.0, 2833.0, 2834.0, 2834.0, 2836.0, 2839.0, 2841.0, 2842.0,
+      2845.0, 2846.0, 2848.0, 2849.0, 2851.0, 2852.0, 2858.0, 2859.0, 2860.0, 2861.0,
+      2862.0, 2863.0, 2863.0, 2863.0, 2863.0, 2864.0, 2866.0, 2867.0, 2867.0, 2867.0,
+      2869.0, 2869.0, 2870.0, 2873.0, 2877.0, 2877.0, 2878.0, 2878.0, 2879.0, 2881.0,
+      2882.0, 2882.0, 2883.0, 2884.0, 2887.0, 2888.0, 2889.0, 2890.0, 2892.0, 2892.0,
+      2892.0, 2893.0, 2898.0, 2898.0, 2898.0, 2900.0, 2902.0, 2903.0, 2903.0, 2904.0,
+      2904.0, 2906.0, 2908.0, 2912.0, 2912.0, 2914.0, 2916.0, 2917.0, 2920.0, 2921.0,
+      2921.0, 2924.0, 2924.0, 2925.0, 2927.0, 2928.0, 2929.0, 2932.0, 2934.0, 2934.0,
+      2937.0, 2937.0, 2938.0, 2939.0, 2939.0, 2940.0, 2940.0, 2942.0, 2945.0, 2947.0,
+      2948.0, 2948.0, 2950.0, 2950.0, 2951.0, 2951.0, 2951.0, 2951.0, 2953.0, 2954.0,
+      2955.0, 2957.0, 2957.0, 2957.0, 2958.0, 2958.0, 2960.0, 2963.0, 2964.0, 2964.0,
+      2968.0, 2969.0, 2969.0, 2972.0, 2973.0, 2974.0, 2975.0, 2976.0, 2979.0, 2980.0,
+      2983.0, 2984.0, 2985.0, 2985.0, 2988.0, 2989.0, 2990.0, 2991.0, 2993.0, 2994.0,
+      2994.0, 2995.0, 2996.0, 2997.0, 2997.0, 3000.0, 3000.0, 3000.0, 3000.0, 3001.0,
+      3002.0, 3002.0, 3003.0, 3005.0, 3006.0, 3008.0, 3009.0, 3010.0, 3011.0, 3014.0,
+      3015.0, 3015.0, 3018.0, 3018.0, 3019.0, 3020.0, 3020.0, 3020.0, 3023.0, 3027.0,
+      3028.0, 3028.0, 3030.0, 3032.0, 3034.0, 3035.0, 3036.0, 3037.0, 3037.0, 3037.0,
+      3041.0, 3042.0, 3042.0, 3047.0, 3047.0, 3048.0, 3048.0, 3050.0, 3051.0, 3051.0,
+      3051.0, 3053.0, 3054.0, 3055.0, 3055.0, 3055.0, 3056.0, 3056.0, 3056.0, 3058.0,
+      3058.0, 3059.0, 3063.0, 3065.0, 3065.0, 3065.0, 3066.0, 3068.0, 3068.0, 3069.0,
+      3070.0, 3071.0, 3075.0, 3078.0, 3080.0, 3081.0, 3081.0, 3082.0, 3082.0, 3083.0,
+      3085.0, 3085.0, 3085.0, 3086.0, 3087.0, 3089.0, 3096.0, 3097.0, 3097.0, 3100.0,
+      3101.0, 3102.0, 3104.0, 3105.0, 3110.0, 3111.0, 3112.0, 3113.0, 3115.0, 3115.0,
+      3116.0, 3118.0, 3118.0, 3119.0, 3119.0, 3120.0, 3120.0, 3120.0, 3121.0, 3121.0,
+      3121.0, 3122.0, 3125.0, 3125.0, 3129.0, 3129.0, 3133.0, 3134.0, 3135.0, 3137.0,
+      3141.0, 3144.0, 3149.0, 3152.0, 3159.0, 3160.0, 3161.0, 3162.0, 3162.0, 3165.0,
+      3167.0, 3168.0, 3168.0, 3171.0, 3172.0, 3173.0, 3174.0, 3174.0, 3181.0, 3181.0,
+      3183.0, 3186.0, 3187.0, 3188.0, 3190.0, 3192.0, 3193.0, 3193.0, 3193.0, 3194.0,
+      3194.0, 3195.0, 3195.0, 3197.0, 3197.0, 3200.0, 3201.0, 3201.0, 3203.0, 3205.0,
+      3206.0, 3207.0, 3209.0, 3210.0, 3210.0, 3210.0, 3210.0, 3211.0, 3211.0, 3212.0,
+      3213.0, 3213.0, 3214.0, 3215.0, 3219.0, 3219.0, 3221.0, 3221.0, 3224.0, 3226.0,
+      3226.0, 3228.0, 3228.0, 3230.0, 3233.0, 3234.0, 3236.0, 3239.0, 3241.0, 3242.0,
+      3242.0, 3248.0, 3248.0, 3249.0, 3251.0, 3252.0, 3253.0, 3254.0, 3256.0, 3259.0,
+      3260.0, 3260.0, 3260.0, 3261.0, 3263.0, 3264.0, 3265.0, 3265.0, 3268.0, 3271.0,
+      3271.0, 3272.0, 3273.0, 3274.0, 3275.0, 3279.0, 3282.0, 3283.0, 3283.0, 3284.0,
+      3284.0, 3285.0, 3288.0, 3289.0, 3290.0, 3290.0, 3290.0, 3292.0, 3292.0, 3293.0,
+      3294.0, 3296.0, 3297.0, 3297.0, 3297.0, 3298.0, 3300.0, 3302.0, 3303.0, 3306.0,
+      3306.0, 3309.0, 3311.0, 3311.0, 3314.0, 3316.0, 3318.0, 3321.0, 3321.0, 3325.0,
+      3326.0, 3326.0, 3329.0, 3329.0, 3329.0, 3329.0, 3332.0, 3333.0, 3333.0, 3334.0,
+      3334.0, 3334.0, 3335.0, 3335.0, 3336.0, 3337.0, 3340.0, 3344.0, 3344.0, 3347.0,
+      3350.0, 3351.0, 3353.0, 3355.0, 3355.0, 3357.0, 3358.0, 3360.0, 3362.0, 3364.0,
+      3364.0, 3364.0, 3365.0, 3365.0, 3365.0, 3366.0, 3368.0, 3369.0, 3369.0, 3371.0,
+      3373.0, 3378.0, 3379.0, 3383.0, 3383.0, 3385.0, 3385.0, 3386.0, 3388.0, 3389.0,
+      3390.0, 3391.0, 3391.0, 3392.0, 3395.0, 3400.0, 3401.0, 3403.0, 3404.0, 3408.0,
+      3410.0, 3411.0, 3416.0, 3417.0, 3419.0, 3421.0, 3422.0, 3423.0, 3423.0, 3423.0,
+      3424.0, 3432.0, 3432.0, 3433.0, 3435.0, 3438.0, 3439.0, 3439.0, 3441.0, 3442.0,
+      3443.0, 3444.0, 3444.0, 3444.0, 3445.0, 3446.0, 3446.0, 3448.0, 3448.0, 3449.0,
+      3452.0, 3452.0, 3452.0, 3453.0, 3454.0, 3456.0, 3457.0, 3460.0, 3460.0, 3460.0,
+      3461.0, 3462.0, 3464.0, 3464.0, 3465.0, 3465.0, 3467.0, 3468.0, 3472.0, 3473.0,
+      3474.0, 3476.0, 3478.0, 3478.0, 3478.0, 3480.0, 3481.0, 3486.0, 3489.0, 3489.0,
+      3491.0, 3493.0, 3493.0, 3494.0, 3494.0, 3494.0, 3498.0, 3501.0, 3501.0, 3504.0,
+      3506.0, 3506.0, 3507.0, 3508.0, 3508.0, 3509.0, 3515.0, 3515.0, 3516.0, 3516.0,
+      3517.0, 3517.0, 3518.0, 3518.0, 3519.0, 3520.0, 3521.0, 3521.0, 3522.0, 3523.0,
+      3525.0, 3527.0, 3530.0, 3530.0, 3530.0, 3530.0, 3531.0, 3533.0, 3536.0, 3537.0,
+      3539.0, 3543.0, 3549.0, 3550.0, 3551.0, 3552.0, 3552.0, 3553.0, 3555.0, 3556.0,
+      3557.0, 3557.0, 3558.0, 3559.0, 3559.0, 3559.0, 3560.0, 3562.0, 3562.0, 3562.0,
+      3563.0, 3564.0, 3565.0, 3565.0, 3566.0, 3566.0, 3567.0, 3571.0, 3573.0, 3573.0,
+      3573.0, 3574.0, 3574.0, 3574.0, 3574.0, 3575.0, 3579.0, 3580.0, 3580.0, 3581.0,
+      3583.0, 3586.0, 3588.0, 3591.0, 3592.0, 3595.0, 3602.0, 3603.0, 3604.0, 3604.0,
+      3606.0, 3607.0, 3608.0, 3612.0, 3614.0, 3615.0, 3615.0, 3615.0, 3615.0, 3616.0,
+      3617.0, 3621.0, 3622.0, 3623.0, 3624.0, 3625.0, 3627.0, 3628.0, 3629.0, 3630.0,
+      3636.0, 3636.0, 3638.0, 3639.0, 3639.0, 3641.0, 3643.0, 3646.0, 3649.0, 3650.0,
+      3653.0, 3653.0, 3655.0, 3656.0, 3658.0, 3658.0, 3658.0, 3660.0, 3661.0, 3663.0,
+      3664.0, 3667.0, 3667.0, 3669.0, 3670.0, 3672.0, 3674.0, 3674.0, 3682.0, 3682.0,
+      3683.0, 3685.0, 3689.0, 3689.0, 3689.0, 3691.0, 3693.0, 3693.0, 3694.0, 3696.0,
+      3696.0, 3697.0, 3699.0, 3699.0, 3701.0, 3701.0, 3705.0, 3708.0, 3712.0, 3714.0,
+      3715.0, 3718.0, 3719.0, 3719.0, 3722.0, 3722.0, 3722.0, 3722.0, 3724.0, 3725.0,
+      3725.0, 3725.0, 3727.0, 3728.0, 3731.0, 3731.0, 3733.0, 3733.0, 3733.0, 3734.0,
+      3735.0, 3738.0, 3738.0, 3740.0, 3741.0, 3741.0, 3741.0, 3743.0, 3744.0, 3744.0,
+      3747.0, 3747.0, 3748.0, 3750.0, 3751.0, 3752.0, 3753.0, 3754.0, 3755.0, 3757.0,
+      3759.0, 3760.0, 3761.0, 3762.0, 3762.0, 3765.0, 3768.0, 3769.0, 3770.0, 3770.0,
+      3771.0, 3773.0, 3773.0, 3776.0, 3778.0, 3778.0, 3778.0, 3779.0, 3780.0, 3781.0,
+      3781.0, 3781.0, 3783.0, 3783.0, 3783.0, 3783.0, 3789.0, 3791.0, 3792.0, 3794.0,
+      3795.0, 3795.0, 3796.0, 3797.0, 3797.0, 3798.0, 3799.0, 3799.0, 3802.0, 3803.0,
+      3810.0, 3810.0, 3811.0, 3811.0, 3816.0, 3818.0, 3818.0, 3818.0, 3819.0, 3825.0,
+      3825.0, 3825.0, 3826.0, 3828.0, 3829.0, 3832.0, 3832.0, 3833.0, 3835.0, 3838.0,
+      3838.0, 3839.0, 3839.0, 3841.0, 3841.0, 3844.0, 3844.0, 3845.0, 3846.0, 3850.0,
+      3851.0, 3851.0, 3853.0, 3853.0, 3853.0, 3853.0, 3853.0, 3854.0, 3854.0, 3855.0,
+      3856.0, 3856.0, 3858.0, 3858.0, 3858.0, 3861.0, 3861.0, 3861.0, 3861.0, 3862.0,
+      3863.0, 3869.0, 3871.0, 3871.0, 3871.0, 3873.0, 3874.0, 3875.0, 3876.0, 3877.0,
+      3880.0, 3880.0, 3881.0, 3882.0, 3884.0, 3888.0, 3888.0, 3890.0, 3893.0, 3895.0,
+      3895.0, 3897.0, 3897.0, 3897.0, 3898.0, 3900.0, 3901.0, 3903.0, 3904.0, 3905.0,
+      3905.0, 3906.0, 3906.0, 3908.0, 3909.0, 3909.0, 3910.0, 3911.0, 3913.0, 3914.0,
+      3914.0, 3921.0, 3921.0, 3921.0, 3921.0, 3922.0, 3925.0, 3928.0, 3928.0, 3929.0,
+      3932.0, 3933.0, 3933.0, 3937.0, 3937.0, 3939.0, 3944.0, 3944.0, 3945.0, 3945.0,
+      3946.0, 3946.0, 3947.0, 3950.0, 3953.0, 3953.0, 3958.0, 3959.0, 3959.0, 3959.0,
+      3960.0, 3960.0, 3961.0, 3963.0, 3963.0, 3964.0, 3966.0, 3967.0, 3969.0, 3971.0,
+      3972.0, 3973.0, 3973.0, 3974.0, 3975.0, 3976.0, 3977.0, 3977.0, 3981.0, 3982.0,
+      3983.0, 3983.0, 3984.0, 3985.0, 3987.0, 3989.0, 3991.0, 3992.0, 3994.0, 3995.0,
+      3995.0, 3995.0, 3996.0, 3997.0, 3998.0, 4001.0, 4001.0, 4001.0, 4002.0, 4003.0,
+      4003.0, 4003.0, 4005.0, 4005.0, 4007.0, 4007.0, 4007.0, 4008.0, 4009.0, 4012.0,
+      4014.0, 4017.0, 4017.0, 4018.0, 4018.0, 4018.0, 4020.0, 4024.0, 4026.0, 4029.0,
+      4031.0, 4031.0, 4031.0, 4033.0, 4033.0, 4033.0, 4036.0, 4036.0, 4037.0, 4038.0,
+      4038.0, 4042.0, 4044.0, 4046.0, 4047.0, 4048.0, 4048.0, 4049.0, 4051.0, 4051.0,
+      4052.0, 4053.0, 4054.0, 4055.0, 4055.0, 4055.0, 4056.0, 4057.0, 4057.0, 4057.0,
+      4058.0, 4059.0, 4065.0, 4066.0, 4070.0, 4072.0, 4072.0, 4073.0, 4075.0, 4076.0,
+      4078.0, 4078.0, 4078.0, 4078.0, 4080.0, 4080.0, 4080.0, 4080.0, 4081.0, 4082.0,
+      4082.0, 4083.0, 4083.0, 4083.0, 4090.0, 4093.0, 4096.0, 4098.0, 4101.0, 4105.0,
+      4108.0, 4110.0, 4110.0, 4111.0, 4113.0, 4115.0, 4116.0, 4120.0, 4121.0, 4124.0,
+      4127.0, 4129.0, 4129.0, 4132.0, 4134.0, 4135.0, 4136.0, 4136.0, 4137.0, 4137.0,
+      4140.0, 4140.0, 4141.0, 4141.0, 4141.0, 4143.0, 4149.0, 4151.0, 4151.0, 4151.0,
+      4153.0, 4155.0, 4156.0, 4156.0, 4158.0, 4158.0, 4159.0, 4160.0, 4162.0, 4162.0,
+      4166.0, 4169.0, 4171.0, 4171.0, 4173.0, 4174.0, 4184.0, 4184.0, 4185.0, 4187.0,
+      4188.0, 4188.0, 4191.0, 4192.0, 4196.0, 4197.0, 4198.0, 4198.0, 4201.0, 4202.0,
+      4202.0, 4204.0, 4208.0, 4209.0, 4209.0, 4210.0, 4211.0, 4211.0, 4212.0, 4217.0,
+      4219.0, 4221.0, 4221.0, 4222.0, 4223.0, 4225.0, 4225.0, 4225.0, 4226.0, 4227.0,
+      4231.0, 4234.0, 4234.0, 4234.0, 4235.0, 4236.0, 4237.0, 4240.0, 4240.0, 4240.0,
+      4241.0, 4242.0, 4244.0, 4245.0, 4249.0, 4255.0, 4257.0, 4257.0, 4258.0, 4259.0,
+      4261.0, 4261.0, 4261.0, 4261.0, 4267.0, 4268.0, 4268.0, 4268.0, 4269.0, 4269.0,
+      4270.0, 4272.0, 4273.0, 4275.0, 4275.0, 4276.0, 4276.0, 4276.0, 4277.0, 4280.0,
+      4281.0, 4288.0, 4289.0, 4289.0, 4290.0, 4290.0, 4291.0, 4293.0, 4296.0, 4296.0,
+      4301.0, 4303.0, 4304.0, 4306.0, 4310.0, 4310.0, 4310.0, 4316.0, 4318.0, 4322.0,
+      4323.0, 4323.0, 4324.0, 4324.0, 4324.0, 4327.0, 4327.0, 4328.0, 4329.0, 4329.0,
+      4329.0, 4330.0, 4331.0, 4334.0, 4335.0, 4336.0, 4337.0, 4340.0, 4341.0, 4343.0,
+      4345.0, 4345.0, 4345.0, 4346.0, 4347.0, 4350.0, 4352.0, 4353.0, 4356.0, 4358.0,
+      4358.0, 4358.0, 4358.0, 4359.0, 4360.0, 4361.0, 4362.0, 4363.0, 4364.0, 4366.0,
+      4372.0, 4372.0, 4373.0, 4374.0, 4375.0, 4379.0, 4380.0, 4380.0, 4382.0, 4384.0,
+      4386.0, 4386.0, 4388.0, 4389.0, 4389.0, 4390.0, 4391.0, 4393.0, 4393.0, 4394.0,
+      4394.0, 4395.0, 4396.0, 4396.0, 4399.0, 4399.0, 4401.0, 4401.0, 4401.0, 4408.0,
+      4411.0, 4412.0, 4414.0, 4415.0, 4417.0, 4418.0, 4420.0, 4421.0, 4422.0, 4423.0,
+      4423.0, 4423.0, 4427.0, 4427.0, 4429.0, 4430.0, 4431.0, 4431.0, 4432.0, 4435.0,
+      4436.0, 4443.0, 4443.0, 4443.0, 4443.0, 4447.0, 4448.0, 4451.0, 4452.0, 4452.0,
+      4455.0, 4455.0, 4457.0, 4457.0, 4462.0, 4462.0, 4465.0, 4465.0, 4466.0, 4467.0,
+      4468.0, 4468.0, 4469.0, 4469.0, 4470.0, 4472.0, 4473.0, 4474.0, 4479.0, 4480.0,
+      4481.0, 4482.0, 4483.0, 4484.0, 4485.0, 4489.0, 4490.0, 4492.0, 4493.0, 4496.0,
+      4497.0, 4499.0, 4501.0, 4501.0, 4504.0, 4505.0, 4505.0, 4511.0, 4514.0, 4514.0,
+      4515.0, 4516.0, 4517.0, 4519.0, 4520.0, 4520.0, 4520.0, 4522.0, 4522.0, 4525.0,
+      4527.0, 4527.0, 4528.0, 4528.0, 4528.0, 4529.0, 4529.0, 4530.0, 4534.0, 4537.0,
+      4539.0, 4541.0, 4542.0, 4543.0, 4547.0, 4548.0, 4549.0, 4549.0, 4549.0, 4550.0,
+      4551.0, 4551.0, 4552.0, 4553.0, 4553.0, 4554.0, 4554.0, 4556.0, 4556.0, 4556.0,
+      4559.0, 4567.0, 4568.0, 4568.0, 4568.0, 4569.0, 4569.0, 4569.0, 4570.0, 4572.0,
+      4572.0, 4580.0, 4584.0, 4585.0, 4585.0, 4589.0, 4591.0, 4592.0, 4594.0, 4594.0,
+      4598.0, 4598.0, 4600.0, 4601.0, 4602.0, 4602.0, 4603.0, 4603.0, 4603.0, 4604.0,
+      4605.0, 4605.0, 4606.0, 4608.0, 4608.0, 4609.0, 4611.0, 4613.0, 4618.0, 4619.0,
+      4619.0, 4624.0, 4625.0, 4629.0, 4635.0, 4637.0, 4637.0, 4637.0, 4638.0, 4644.0,
+      4644.0, 4648.0, 4650.0, 4653.0, 4654.0, 4655.0, 4655.0, 4656.0, 4658.0, 4659.0,
+      4659.0, 4662.0, 4663.0, 4664.0, 4664.0, 4664.0, 4666.0, 4666.0, 4668.0, 4670.0,
+      4672.0, 4675.0, 4678.0, 4679.0, 4683.0, 4688.0, 4688.0, 4689.0, 4689.0, 4689.0,
+      4690.0, 4690.0, 4691.0, 4693.0, 4694.0, 4695.0, 4696.0, 4698.0, 4699.0, 4701.0,
+      4701.0, 4703.0, 4703.0, 4704.0, 4704.0, 4707.0, 4710.0, 4711.0, 4711.0, 4711.0,
+      4715.0, 4716.0, 4717.0, 4718.0, 4720.0, 4721.0, 4722.0, 4723.0, 4723.0, 4723.0,
+      4726.0, 4726.0, 4727.0, 4732.0, 4733.0, 4733.0, 4733.0, 4734.0, 4738.0, 4742.0,
+      4743.0, 4745.0, 4746.0, 4752.0, 4754.0, 4758.0, 4761.0, 4761.0, 4761.0, 4766.0,
+      4767.0, 4768.0, 4771.0, 4772.0, 4775.0, 4776.0, 4776.0, 4778.0, 4780.0, 4782.0,
+      4784.0, 4784.0, 4785.0, 4788.0, 4790.0, 4791.0, 4791.0, 4794.0, 4797.0, 4798.0,
+      4801.0, 4802.0, 4803.0, 4807.0, 4808.0, 4810.0, 4812.0, 4813.0, 4814.0, 4814.0,
+      4815.0, 4817.0, 4822.0, 4822.0, 4824.0, 4825.0, 4828.0, 4834.0, 4834.0, 4837.0,
+      4839.0, 4843.0, 4844.0, 4845.0, 4845.0, 4846.0, 4849.0, 4850.0, 4851.0, 4856.0,
+      4857.0, 4858.0, 4859.0, 4860.0, 4860.0, 4860.0, 4860.0, 4861.0, 4865.0, 4866.0,
+      4867.0, 4869.0, 4871.0, 4872.0, 4873.0, 4877.0, 4877.0, 4878.0, 4882.0, 4882.0,
+      4883.0, 4883.0, 4885.0, 4886.0, 4887.0, 4891.0, 4893.0, 4895.0, 4897.0, 4900.0,
+      4900.0, 4900.0, 4902.0, 4903.0, 4903.0, 4904.0, 4905.0, 4905.0, 4906.0, 4907.0,
+      4907.0, 4908.0, 4910.0, 4910.0, 4911.0, 4913.0, 4914.0, 4915.0, 4916.0, 4916.0,
+      4917.0, 4918.0, 4918.0, 4918.0, 4919.0, 4922.0, 4923.0, 4928.0, 4929.0, 4930.0,
+      4932.0, 4932.0, 4933.0, 4934.0, 4936.0, 4937.0, 4938.0, 4941.0, 4941.0, 4942.0,
+      4946.0, 4946.0, 4946.0, 4947.0, 4948.0, 4948.0, 4949.0, 4952.0, 4953.0, 4954.0,
+      4954.0, 4956.0, 4958.0, 4960.0, 4962.0, 4962.0, 4963.0, 4969.0, 4969.0, 4970.0,
+      4970.0, 4973.0, 4973.0, 4974.0, 4974.0, 4976.0, 4976.0, 4976.0, 4976.0, 4977.0,
+      4977.0, 4977.0, 4979.0, 4979.0, 4980.0, 4986.0, 4986.0, 4986.0, 4987.0, 4988.0,
+      4988.0, 4988.0, 4989.0, 4992.0, 4992.0, 4992.0, 4992.0, 4993.0, 4996.0, 4996.0,
+      4998.0, 5002.0, 5002.0, 5007.0, 5009.0, 5009.0, 5010.0, 5011.0, 5011.0, 5012.0,
+      5016.0, 5017.0, 5017.0, 5018.0, 5018.0, 5022.0, 5024.0, 5026.0, 5027.0, 5028.0,
+      5030.0, 5030.0, 5032.0, 5033.0, 5034.0, 5034.0, 5037.0, 5038.0, 5039.0, 5043.0,
+      5045.0, 5046.0, 5049.0, 5049.0, 5050.0, 5051.0, 5052.0, 5053.0, 5054.0, 5055.0,
+      5056.0, 5060.0, 5060.0, 5063.0, 5064.0, 5066.0, 5066.0, 5066.0, 5067.0, 5070.0,
+      5071.0, 5072.0, 5074.0, 5076.0, 5079.0, 5082.0, 5083.0, 5083.0, 5086.0, 5088.0,
+      5088.0, 5088.0, 5089.0, 5089.0, 5090.0, 5090.0, 5090.0, 5091.0, 5091.0, 5094.0,
+      5094.0, 5095.0, 5095.0, 5097.0, 5098.0, 5099.0, 5100.0, 5102.0, 5102.0, 5102.0,
+      5103.0, 5104.0, 5106.0, 5110.0, 5110.0, 5115.0, 5115.0, 5116.0, 5116.0, 5117.0,
+      5117.0, 5118.0, 5122.0, 5123.0, 5123.0, 5125.0, 5127.0, 5130.0, 5135.0, 5137.0,
+      5137.0, 5137.0, 5137.0, 5140.0, 5140.0, 5141.0, 5142.0, 5143.0, 5146.0, 5146.0,
+      5148.0, 5149.0, 5151.0, 5151.0, 5152.0, 5154.0, 5156.0, 5156.0, 5156.0, 5158.0,
+      5159.0, 5160.0, 5161.0, 5162.0, 5164.0, 5167.0, 5171.0, 5172.0, 5172.0, 5173.0,
+      5175.0, 5175.0, 5175.0, 5176.0, 5176.0, 5178.0, 5179.0, 5181.0, 5182.0, 5183.0,
+      5186.0, 5192.0, 5193.0, 5194.0, 5194.0, 5194.0, 5197.0, 5198.0, 5201.0, 5202.0,
+      5205.0, 5205.0, 5206.0, 5209.0, 5210.0, 5211.0, 5211.0, 5214.0, 5215.0, 5216.0,
+      5216.0, 5218.0, 5220.0, 5220.0, 5221.0, 5222.0, 5222.0, 5222.0, 5223.0, 5223.0,
+      5223.0, 5225.0, 5226.0, 5227.0, 5228.0, 5230.0, 5230.0, 5233.0, 5235.0, 5236.0,
+      5236.0, 5236.0, 5241.0, 5241.0, 5242.0, 5244.0, 5244.0, 5245.0, 5246.0, 5247.0,
+      5248.0, 5250.0, 5250.0, 5252.0, 5252.0, 5254.0, 5255.0, 5256.0, 5257.0, 5258.0,
+      5258.0, 5260.0, 5265.0, 5265.0, 5267.0, 5268.0, 5272.0, 5277.0, 5279.0, 5279.0,
+      5280.0, 5280.0, 5282.0, 5283.0, 5283.0, 5284.0, 5286.0, 5286.0, 5286.0, 5288.0,
+      5291.0, 5292.0, 5293.0, 5297.0, 5300.0, 5301.0, 5301.0, 5303.0, 5306.0, 5312.0,
+      5313.0, 5313.0, 5319.0, 5320.0, 5322.0, 5323.0, 5324.0, 5325.0, 5326.0, 5328.0,
+      5329.0, 5330.0, 5331.0, 5332.0, 5335.0, 5337.0, 5338.0, 5338.0, 5342.0, 5343.0,
+      5344.0, 5346.0, 5346.0, 5347.0, 5349.0, 5351.0, 5353.0, 5356.0, 5362.0, 5362.0,
+      5365.0, 5366.0, 5367.0, 5368.0, 5368.0, 5368.0, 5369.0, 5371.0, 5371.0, 5373.0,
+      5373.0, 5374.0, 5374.0, 5375.0, 5376.0, 5378.0, 5379.0, 5382.0, 5385.0, 5385.0,
+      5387.0, 5389.0, 5389.0, 5391.0, 5392.0, 5395.0, 5395.0, 5403.0, 5403.0, 5405.0,
+      5409.0, 5411.0, 5412.0, 5414.0, 5417.0, 5419.0, 5422.0, 5422.0, 5424.0, 5426.0,
+      5427.0, 5428.0, 5431.0, 5431.0, 5433.0, 5433.0, 5433.0, 5435.0, 5435.0, 5437.0,
+      5437.0, 5438.0, 5438.0, 5440.0, 5440.0, 5442.0, 5442.0, 5445.0, 5445.0, 5446.0,
+      5447.0, 5447.0, 5448.0, 5450.0, 5450.0, 5451.0, 5451.0, 5457.0, 5457.0, 5458.0,
+      5459.0, 5459.0, 5460.0, 5461.0, 5463.0, 5463.0, 5464.0, 5465.0, 5468.0, 5469.0,
+      5469.0, 5473.0, 5474.0, 5475.0, 5476.0, 5481.0, 5482.0, 5484.0, 5485.0, 5487.0,
+      5487.0, 5489.0, 5490.0, 5492.0, 5492.0, 5493.0, 5495.0, 5496.0, 5499.0, 5500.0,
+      5503.0, 5503.0, 5508.0, 5508.0, 5510.0, 5513.0, 5513.0, 5517.0, 5518.0, 5518.0,
+      5519.0, 5519.0, 5520.0, 5525.0, 5526.0, 5527.0, 5528.0, 5528.0, 5532.0, 5532.0,
+      5535.0, 5536.0, 5538.0, 5540.0, 5543.0, 5544.0, 5546.0, 5547.0, 5547.0, 5550.0,
+      5551.0, 5552.0, 5558.0, 5559.0, 5563.0, 5563.0, 5565.0, 5568.0, 5572.0, 5572.0,
+      5573.0, 5576.0, 5577.0, 5579.0, 5579.0, 5580.0, 5582.0, 5590.0, 5590.0, 5591.0,
+      5592.0, 5594.0, 5595.0, 5600.0, 5601.0, 5602.0, 5603.0, 5605.0, 5614.0, 5614.0,
+      5615.0, 5615.0, 5615.0, 5616.0, 5618.0, 5618.0, 5622.0, 5622.0, 5623.0, 5626.0,
+      5627.0, 5628.0, 5630.0, 5631.0, 5633.0, 5634.0, 5634.0, 5635.0, 5635.0, 5640.0,
+      5641.0, 5643.0, 5644.0, 5645.0, 5647.0, 5647.0, 5649.0, 5651.0, 5651.0, 5651.0,
+      5654.0, 5654.0, 5656.0, 5657.0, 5659.0, 5660.0, 5662.0, 5663.0, 5666.0, 5668.0,
+      5669.0, 5669.0, 5670.0, 5670.0, 5670.0, 5676.0, 5676.0, 5677.0, 5678.0, 5679.0,
+      5680.0, 5681.0, 5681.0, 5684.0, 5687.0, 5687.0, 5688.0, 5692.0, 5693.0, 5694.0,
+      5696.0, 5697.0, 5698.0, 5699.0, 5699.0, 5700.0, 5703.0, 5703.0, 5704.0, 5704.0,
+      5705.0, 5705.0, 5705.0, 5706.0, 5709.0, 5711.0, 5714.0, 5715.0, 5716.0, 5717.0,
+      5718.0, 5718.0, 5719.0, 5719.0, 5719.0, 5722.0, 5722.0, 5722.0, 5725.0, 5728.0,
+      5729.0, 5729.0, 5730.0, 5732.0, 5733.0, 5738.0, 5738.0, 5739.0, 5739.0, 5740.0,
+      5741.0, 5741.0, 5741.0, 5744.0, 5746.0, 5746.0, 5749.0, 5749.0, 5750.0, 5751.0,
+      5754.0, 5756.0, 5757.0, 5758.0, 5761.0, 5762.0, 5763.0, 5764.0, 5766.0, 5768.0,
+      5771.0, 5771.0, 5772.0, 5773.0, 5774.0, 5778.0, 5778.0, 5780.0, 5781.0, 5782.0,
+      5789.0, 5795.0, 5796.0, 5797.0, 5797.0, 5799.0, 5799.0, 5803.0, 5805.0, 5806.0,
+      5806.0, 5807.0, 5807.0, 5808.0, 5811.0, 5812.0, 5813.0, 5817.0, 5817.0, 5818.0,
+      5818.0, 5818.0, 5822.0, 5825.0, 5825.0, 5828.0, 5828.0, 5834.0, 5835.0, 5838.0,
+      5840.0, 5840.0, 5844.0, 5845.0, 5851.0, 5852.0, 5853.0, 5856.0, 5860.0, 5867.0,
+      5869.0, 5871.0, 5871.0, 5874.0, 5875.0, 5875.0, 5876.0, 5879.0, 5883.0, 5883.0,
+      5886.0, 5888.0, 5888.0, 5890.0, 5892.0, 5892.0, 5894.0, 5895.0, 5897.0, 5899.0,
+      5901.0, 5903.0, 5908.0, 5910.0, 5910.0, 5918.0, 5920.0, 5922.0, 5922.0, 5923.0,
+      5923.0, 5924.0, 5928.0, 5930.0, 5932.0, 5935.0, 5935.0, 5937.0, 5943.0, 5944.0,
+      5945.0, 5945.0, 5946.0, 5947.0, 5947.0, 5950.0, 5951.0, 5952.0, 5953.0, 5954.0,
+      5954.0, 5956.0, 5957.0, 5958.0, 5961.0, 5962.0, 5965.0, 5966.0, 5966.0, 5966.0,
+      5966.0, 5967.0, 5969.0, 5970.0, 5972.0, 5974.0, 5978.0, 5986.0, 5988.0, 5989.0,
+      5989.0, 5992.0, 5992.0, 5993.0, 5993.0, 5993.0, 5993.0, 5995.0, 5999.0, 6002.0,
+      6003.0, 6005.0, 6009.0, 6010.0, 6010.0, 6011.0, 6012.0, 6012.0, 6012.0, 6012.0,
+      6014.0, 6015.0, 6020.0, 6023.0, 6024.0, 6030.0, 6031.0, 6032.0, 6035.0, 6036.0,
+      6037.0, 6037.0, 6039.0, 6039.0, 6039.0, 6040.0, 6044.0, 6044.0, 6050.0, 6050.0,
+      6050.0, 6050.0, 6051.0, 6055.0, 6056.0, 6057.0, 6058.0, 6058.0, 6058.0, 6059.0,
+      6061.0, 6062.0, 6063.0, 6066.0, 6067.0, 6070.0, 6072.0, 6073.0, 6074.0, 6074.0,
+      6079.0, 6080.0, 6080.0, 6084.0, 6087.0, 6092.0, 6094.0, 6097.0, 6098.0, 6099.0,
+      6104.0, 6105.0, 6106.0, 6109.0, 6111.0, 6112.0, 6113.0, 6113.0, 6114.0, 6116.0,
+      6117.0, 6120.0, 6124.0, 6126.0, 6131.0, 6132.0, 6134.0, 6136.0, 6138.0, 6138.0,
+      6144.0, 6145.0, 6146.0, 6147.0, 6148.0, 6150.0, 6154.0, 6154.0, 6154.0, 6154.0,
+      6155.0, 6156.0, 6157.0, 6159.0, 6159.0, 6160.0, 6162.0, 6162.0, 6163.0, 6164.0,
+      6164.0, 6164.0, 6165.0, 6168.0, 6171.0, 6172.0, 6176.0, 6178.0, 6179.0, 6180.0,
+      6181.0, 6182.0, 6183.0, 6188.0, 6188.0, 6191.0, 6193.0, 6195.0, 6196.0, 6201.0,
+      6206.0, 6206.0, 6211.0, 6211.0, 6212.0, 6213.0, 6218.0, 6218.0, 6220.0, 6221.0,
+      6221.0, 6222.0, 6223.0, 6224.0, 6228.0, 6228.0, 6229.0, 6234.0, 6237.0, 6242.0,
+      6243.0, 6243.0, 6244.0, 6247.0, 6250.0, 6255.0, 6262.0, 6264.0, 6265.0, 6266.0,
+      6268.0, 6269.0, 6269.0, 6269.0, 6270.0, 6271.0, 6271.0, 6272.0, 6273.0, 6274.0,
+      6274.0, 6275.0, 6275.0, 6276.0, 6277.0, 6278.0, 6278.0, 6280.0, 6282.0, 6283.0,
+      6288.0, 6290.0, 6290.0, 6294.0, 6297.0, 6301.0, 6301.0, 6304.0, 6308.0, 6310.0,
+      6311.0, 6312.0, 6312.0, 6312.0, 6314.0, 6319.0, 6322.0, 6322.0, 6324.0, 6324.0,
+      6325.0, 6329.0, 6330.0, 6332.0, 6333.0, 6333.0, 6334.0, 6335.0, 6336.0, 6339.0,
+      6346.0, 6347.0, 6349.0, 6360.0, 6361.0, 6361.0, 6361.0, 6362.0, 6362.0, 6364.0,
+      6365.0, 6365.0, 6365.0, 6367.0, 6368.0, 6371.0, 6374.0, 6374.0, 6374.0, 6374.0,
+      6376.0, 6377.0, 6379.0, 6381.0, 6381.0, 6382.0, 6388.0, 6389.0, 6391.0, 6393.0,
+      6394.0, 6394.0, 6395.0, 6395.0, 6403.0, 6407.0, 6409.0, 6409.0, 6410.0, 6412.0,
+      6414.0, 6415.0, 6416.0, 6418.0, 6418.0, 6418.0, 6418.0, 6424.0, 6424.0, 6426.0,
+      6432.0, 6435.0, 6437.0, 6437.0, 6437.0, 6438.0, 6440.0, 6442.0, 6443.0, 6444.0,
+      6447.0, 6447.0, 6448.0, 6448.0, 6448.0, 6451.0, 6452.0, 6452.0, 6452.0, 6453.0,
+      6458.0, 6461.0, 6462.0, 6463.0, 6463.0, 6465.0, 6466.0, 6468.0, 6472.0, 6472.0,
+      6478.0, 6480.0, 6481.0, 6484.0, 6485.0, 6488.0, 6491.0, 6492.0, 6494.0, 6495.0,
+      6500.0, 6502.0, 6503.0, 6506.0, 6509.0, 6512.0, 6515.0, 6517.0, 6519.0, 6520.0,
+      6521.0, 6524.0, 6527.0, 6529.0, 6529.0, 6530.0, 6530.0, 6531.0, 6533.0, 6533.0,
+      6534.0, 6535.0, 6537.0, 6537.0, 6538.0, 6539.0, 6539.0, 6542.0, 6543.0, 6546.0,
+      6546.0, 6547.0, 6549.0, 6552.0, 6553.0, 6554.0, 6558.0, 6558.0, 6560.0, 6563.0,
+      6563.0, 6564.0, 6566.0, 6568.0, 6570.0, 6581.0, 6581.0, 6581.0, 6582.0, 6584.0,
+      6585.0, 6592.0, 6592.0, 6593.0, 6597.0, 6597.0, 6598.0, 6601.0, 6604.0, 6606.0,
+      6610.0, 6616.0, 6617.0, 6618.0, 6622.0, 6625.0, 6626.0, 6627.0, 6627.0, 6628.0,
+      6630.0, 6636.0, 6638.0, 6640.0, 6649.0, 6649.0, 6650.0, 6651.0, 6654.0, 6656.0,
+      6658.0, 6661.0, 6662.0, 6663.0, 6664.0, 6664.0, 6665.0, 6665.0, 6670.0, 6672.0,
+      6674.0, 6675.0, 6681.0, 6681.0, 6681.0, 6687.0, 6688.0, 6689.0, 6691.0, 6691.0,
+      6691.0, 6692.0, 6694.0, 6694.0, 6694.0, 6694.0, 6694.0, 6695.0, 6696.0, 6705.0,
+      6707.0, 6709.0, 6710.0, 6711.0, 6714.0, 6714.0, 6719.0, 6719.0, 6720.0, 6728.0,
+      6733.0, 6733.0, 6736.0, 6739.0, 6740.0, 6740.0, 6741.0, 6745.0, 6747.0, 6747.0,
+      6748.0, 6753.0, 6754.0, 6761.0, 6761.0, 6765.0, 6766.0, 6766.0, 6767.0, 6770.0,
+      6773.0, 6774.0, 6774.0, 6776.0, 6777.0, 6777.0, 6778.0, 6781.0, 6789.0, 6790.0,
+      6791.0, 6794.0, 6794.0, 6796.0, 6799.0, 6802.0, 6803.0, 6806.0, 6810.0, 6811.0,
+      6812.0, 6815.0, 6815.0, 6815.0, 6817.0, 6818.0, 6824.0, 6824.0, 6825.0, 6833.0,
+      6834.0, 6835.0, 6835.0, 6839.0, 6839.0, 6843.0, 6843.0, 6845.0, 6845.0, 6845.0,
+      6846.0, 6850.0, 6850.0, 6852.0, 6852.0, 6853.0, 6853.0, 6854.0, 6857.0, 6858.0,
+      6860.0, 6864.0, 6867.0, 6867.0, 6873.0, 6878.0, 6878.0, 6881.0, 6882.0, 6882.0,
+      6883.0, 6887.0, 6888.0, 6890.0, 6891.0, 6891.0, 6892.0, 6894.0, 6896.0, 6896.0,
+      6901.0, 6901.0, 6906.0, 6906.0, 6908.0, 6909.0, 6909.0, 6910.0, 6912.0, 6912.0,
+      6914.0, 6918.0, 6919.0, 6922.0, 6922.0, 6925.0, 6927.0, 6930.0, 6936.0, 6937.0,
+      6937.0, 6938.0, 6940.0, 6940.0, 6941.0, 6942.0, 6943.0, 6944.0, 6946.0, 6947.0,
+      6947.0, 6950.0, 6950.0, 6951.0, 6951.0, 6952.0, 6955.0, 6957.0, 6958.0, 6962.0,
+      6963.0, 6967.0, 6969.0, 6972.0, 6972.0, 6975.0, 6979.0, 6981.0, 6981.0, 6985.0,
+      6987.0, 6987.0, 6987.0, 6991.0, 6999.0, 7001.0, 7003.0, 7005.0, 7005.0, 7006.0,
+      7007.0, 7007.0, 7008.0, 7008.0, 7009.0, 7009.0, 7012.0, 7015.0, 7015.0, 7017.0,
+      7021.0, 7022.0, 7025.0, 7027.0, 7028.0, 7028.0, 7028.0, 7028.0, 7029.0, 7031.0,
+      7032.0, 7034.0, 7041.0, 7049.0, 7049.0, 7050.0, 7051.0, 7052.0, 7054.0, 7055.0,
+      7059.0, 7060.0, 7061.0, 7061.0, 7065.0, 7068.0, 7069.0, 7069.0, 7070.0, 7071.0,
+      7072.0, 7072.0, 7073.0, 7078.0, 7081.0, 7084.0, 7084.0, 7085.0, 7086.0, 7089.0,
+      7093.0, 7096.0, 7096.0, 7103.0, 7103.0, 7105.0, 7105.0, 7115.0, 7117.0, 7119.0,
+      7124.0, 7125.0, 7126.0, 7127.0, 7127.0, 7128.0, 7128.0, 7128.0, 7129.0, 7130.0,
+      7133.0, 7134.0, 7134.0, 7135.0, 7135.0, 7139.0, 7140.0, 7142.0, 7145.0, 7147.0,
+      7148.0, 7151.0, 7154.0, 7154.0, 7162.0, 7163.0, 7164.0, 7164.0, 7167.0, 7167.0,
+      7169.0, 7170.0, 7177.0, 7179.0, 7180.0, 7184.0, 7184.0, 7188.0, 7188.0, 7189.0,
+      7194.0, 7201.0, 7205.0, 7206.0, 7207.0, 7207.0, 7209.0, 7215.0, 7218.0, 7219.0,
+      7219.0, 7224.0, 7229.0, 7229.0, 7229.0, 7232.0, 7232.0, 7235.0, 7235.0, 7236.0,
+      7239.0, 7241.0, 7245.0, 7247.0, 7250.0, 7254.0, 7258.0, 7259.0, 7260.0, 7264.0,
+      7264.0, 7264.0, 7265.0, 7272.0, 7273.0, 7275.0, 7277.0, 7279.0, 7280.0, 7283.0,
+      7285.0, 7288.0, 7289.0, 7295.0, 7295.0, 7302.0, 7307.0, 7308.0, 7313.0, 7313.0,
+      7316.0, 7321.0, 7325.0, 7336.0, 7340.0, 7340.0, 7342.0, 7344.0, 7344.0, 7345.0,
+      7346.0, 7349.0, 7350.0, 7356.0, 7360.0, 7365.0, 7366.0, 7366.0, 7371.0, 7372.0,
+      7373.0, 7380.0, 7389.0, 7392.0, 7393.0, 7393.0, 7398.0, 7400.0, 7401.0, 7407.0,
+      7408.0, 7411.0, 7414.0, 7417.0, 7419.0, 7424.0, 7425.0, 7429.0, 7429.0, 7430.0,
+      7430.0, 7432.0, 7434.0, 7434.0, 7435.0, 7437.0, 7442.0, 7443.0, 7446.0, 7449.0,
+      7449.0, 7453.0, 7457.0, 7458.0, 7458.0, 7462.0, 7463.0, 7465.0, 7465.0, 7466.0,
+      7469.0, 7469.0, 7469.0, 7471.0, 7473.0, 7475.0, 7476.0, 7476.0, 7477.0, 7477.0,
+      7479.0, 7480.0, 7480.0, 7481.0, 7483.0, 7487.0, 7488.0, 7488.0, 7489.0, 7490.0,
+      7492.0, 7493.0, 7494.0, 7494.0, 7495.0, 7496.0, 7496.0, 7496.0, 7496.0, 7498.0,
+      7500.0, 7503.0, 7503.0, 7506.0, 7506.0, 7508.0, 7508.0, 7513.0, 7515.0, 7517.0,
+      7517.0, 7519.0, 7519.0, 7523.0, 7525.0, 7525.0, 7529.0, 7536.0, 7536.0, 7537.0,
+      7538.0, 7540.0, 7541.0, 7541.0, 7545.0, 7546.0, 7547.0, 7549.0, 7550.0, 7552.0,
+      7553.0, 7553.0, 7556.0, 7556.0, 7557.0, 7558.0, 7560.0, 7562.0, 7562.0, 7564.0,
+      7564.0, 7571.0, 7571.0, 7572.0, 7575.0, 7576.0, 7576.0, 7576.0, 7577.0, 7577.0,
+      7578.0, 7582.0, 7586.0, 7588.0, 7589.0, 7593.0, 7594.0, 7595.0, 7597.0, 7600.0,
+      7604.0, 7605.0, 7607.0, 7608.0, 7610.0, 7611.0, 7611.0, 7612.0, 7612.0, 7612.0,
+      7614.0, 7615.0, 7617.0, 7625.0, 7627.0, 7627.0, 7631.0, 7632.0, 7632.0, 7633.0,
+      7633.0, 7633.0, 7633.0, 7635.0, 7636.0, 7639.0, 7643.0, 7643.0, 7643.0, 7644.0,
+      7644.0, 7644.0, 7645.0, 7645.0, 7650.0, 7654.0, 7659.0, 7659.0, 7664.0, 7671.0,
+      7673.0, 7673.0, 7676.0, 7677.0, 7681.0, 7681.0, 7684.0, 7691.0, 7691.0, 7693.0,
+      7695.0, 7698.0, 7698.0, 7699.0, 7701.0, 7706.0, 7710.0, 7710.0, 7712.0, 7714.0,
+      7717.0, 7717.0, 7719.0, 7723.0, 7725.0, 7728.0, 7729.0, 7732.0, 7733.0, 7739.0,
+      7744.0, 7744.0, 7746.0, 7757.0, 7759.0, 7762.0, 7765.0, 7767.0, 7771.0, 7773.0,
+      7773.0, 7775.0, 7776.0, 7777.0, 7779.0, 7780.0, 7780.0, 7781.0, 7782.0, 7784.0,
+      7785.0, 7792.0, 7793.0, 7793.0, 7794.0, 7800.0, 7800.0, 7801.0, 7804.0, 7804.0,
+      7804.0, 7806.0, 7811.0, 7813.0, 7816.0, 7816.0, 7817.0, 7820.0, 7821.0, 7821.0,
+      7822.0, 7826.0, 7826.0, 7826.0, 7828.0, 7830.0, 7832.0, 7836.0, 7840.0, 7840.0,
+      7854.0, 7854.0, 7857.0, 7860.0, 7864.0, 7868.0, 7870.0, 7870.0, 7875.0, 7884.0,
+      7885.0, 7885.0, 7888.0, 7890.0, 7892.0, 7896.0, 7901.0, 7907.0, 7909.0, 7910.0,
+      7913.0, 7913.0, 7915.0, 7915.0, 7915.0, 7916.0, 7920.0, 7924.0, 7935.0, 7936.0,
+      7940.0, 7943.0, 7945.0, 7946.0, 7948.0, 7950.0, 7953.0, 7954.0, 7955.0, 7960.0,
+      7962.0, 7962.0, 7964.0, 7977.0, 7979.0, 7979.0, 7980.0, 7980.0, 7982.0, 7986.0,
+      7990.0, 7996.0, 7996.0, 8001.0, 8003.0, 8004.0, 8005.0, 8007.0, 8010.0, 8017.0,
+      8019.0, 8020.0, 8024.0, 8026.0, 8027.0, 8036.0, 8036.0, 8044.0, 8046.0, 8047.0,
+      8055.0, 8057.0, 8057.0, 8061.0, 8061.0, 8062.0, 8063.0, 8063.0, 8064.0, 8068.0,
+      8070.0, 8070.0, 8074.0, 8082.0, 8086.0, 8092.0, 8097.0, 8097.0, 8099.0, 8099.0,
+      8100.0, 8101.0, 8101.0, 8102.0, 8105.0, 8107.0, 8109.0, 8111.0, 8115.0, 8116.0,
+      8116.0, 8117.0, 8123.0, 8124.0, 8125.0, 8131.0, 8132.0, 8132.0, 8133.0, 8134.0,
+      8138.0, 8138.0, 8144.0, 8144.0, 8146.0, 8147.0, 8152.0, 8154.0, 8154.0, 8156.0,
+      8157.0, 8162.0, 8163.0, 8163.0, 8164.0, 8165.0, 8170.0, 8171.0, 8180.0, 8180.0,
+      8181.0, 8184.0, 8187.0, 8187.0, 8188.0, 8188.0, 8188.0, 8194.0, 8197.0, 8199.0,
+      8199.0, 8201.0, 8201.0, 8206.0, 8207.0, 8208.0, 8208.0, 8210.0, 8211.0, 8213.0,
+      8214.0, 8215.0, 8215.0, 8216.0, 8220.0, 8221.0, 8221.0, 8222.0, 8223.0, 8225.0,
+      8228.0, 8232.0, 8236.0, 8236.0, 8241.0, 8241.0, 8241.0, 8242.0, 8243.0, 8243.0,
+      8245.0, 8251.0, 8251.0, 8254.0, 8256.0, 8257.0, 8261.0, 8261.0, 8263.0, 8263.0,
+      8264.0, 8265.0, 8267.0, 8268.0, 8276.0, 8277.0, 8278.0, 8278.0, 8279.0, 8279.0,
+      8279.0, 8281.0, 8285.0, 8288.0, 8294.0, 8294.0, 8297.0, 8299.0, 8301.0, 8304.0,
+      8305.0, 8306.0, 8307.0, 8311.0, 8311.0, 8313.0, 8314.0, 8314.0, 8321.0, 8323.0,
+      8325.0, 8330.0, 8333.0, 8340.0, 8340.0, 8340.0, 8340.0, 8342.0, 8347.0, 8355.0,
+      8358.0, 8359.0, 8362.0, 8362.0, 8364.0, 8364.0, 8366.0, 8368.0, 8371.0, 8374.0,
+      8377.0, 8377.0, 8378.0, 8384.0, 8386.0, 8389.0, 8394.0, 8396.0, 8399.0, 8400.0,
+      8404.0, 8407.0, 8408.0, 8409.0, 8409.0, 8410.0, 8411.0, 8413.0, 8413.0, 8415.0,
+      8416.0, 8416.0, 8422.0, 8422.0, 8427.0, 8431.0, 8433.0, 8438.0, 8442.0, 8442.0,
+      8449.0, 8452.0, 8459.0, 8460.0, 8463.0, 8468.0, 8469.0, 8469.0, 8475.0, 8476.0,
+      8477.0, 8478.0, 8479.0, 8487.0, 8488.0, 8488.0, 8488.0, 8489.0, 8490.0, 8491.0,
+      8496.0, 8504.0, 8504.0, 8507.0, 8509.0, 8511.0, 8512.0, 8518.0, 8519.0, 8522.0,
+      8526.0, 8527.0, 8530.0, 8531.0, 8532.0, 8535.0, 8539.0, 8542.0, 8543.0, 8552.0,
+      8555.0, 8555.0, 8557.0, 8558.0, 8559.0, 8564.0, 8566.0, 8566.0, 8567.0, 8568.0,
+      8568.0, 8569.0, 8571.0, 8573.0, 8573.0, 8573.0, 8574.0, 8575.0, 8581.0, 8590.0,
+      8591.0, 8594.0, 8595.0, 8596.0, 8598.0, 8599.0, 8599.0, 8600.0, 8603.0, 8607.0,
+      8607.0, 8609.0, 8609.0, 8612.0, 8616.0, 8619.0, 8620.0, 8620.0, 8625.0, 8627.0,
+      8627.0, 8627.0, 8628.0, 8630.0, 8630.0, 8631.0, 8631.0, 8645.0, 8648.0, 8650.0,
+      8651.0, 8663.0, 8667.0, 8668.0, 8671.0, 8672.0, 8675.0, 8676.0, 8677.0, 8678.0,
+      8679.0, 8680.0, 8684.0, 8687.0, 8691.0, 8692.0, 8694.0, 8696.0, 8699.0, 8713.0,
+      8713.0, 8718.0, 8720.0, 8721.0, 8725.0, 8729.0, 8730.0, 8732.0, 8735.0, 8741.0,
+      8741.0, 8742.0, 8743.0, 8744.0, 8744.0, 8745.0, 8751.0, 8753.0, 8753.0, 8756.0,
+      8763.0, 8772.0, 8777.0, 8777.0, 8777.0, 8779.0, 8780.0, 8783.0, 8783.0, 8786.0,
+      8798.0, 8802.0, 8806.0, 8813.0, 8813.0, 8819.0, 8823.0, 8831.0, 8834.0, 8834.0,
+      8839.0, 8845.0, 8846.0, 8855.0, 8856.0, 8856.0, 8859.0, 8864.0, 8865.0, 8868.0,
+      8868.0, 8871.0, 8871.0, 8871.0, 8872.0, 8874.0, 8875.0, 8882.0, 8882.0, 8888.0,
+      8889.0, 8889.0, 8889.0, 8891.0, 8895.0, 8896.0, 8897.0, 8900.0, 8908.0, 8910.0,
+      8910.0, 8911.0, 8911.0, 8912.0, 8913.0, 8914.0, 8915.0, 8916.0, 8918.0, 8919.0,
+      8920.0, 8921.0, 8922.0, 8924.0, 8924.0, 8927.0, 8928.0, 8931.0, 8932.0, 8933.0,
+      8933.0, 8938.0, 8939.0, 8948.0, 8957.0, 8965.0, 8967.0, 8967.0, 8967.0, 8968.0,
+      8978.0, 8979.0, 8980.0, 8983.0, 8988.0, 8991.0, 8992.0, 8992.0, 8994.0, 8995.0,
+      9008.0, 9008.0, 9009.0, 9009.0, 9009.0, 9010.0, 9012.0, 9018.0, 9022.0, 9024.0,
+      9024.0, 9029.0, 9033.0, 9035.0, 9038.0, 9043.0, 9051.0, 9052.0, 9052.0, 9054.0,
+      9055.0, 9056.0, 9058.0, 9065.0, 9066.0, 9066.0, 9068.0, 9071.0, 9072.0, 9078.0,
+      9082.0, 9085.0, 9086.0, 9086.0, 9086.0, 9090.0, 9092.0, 9092.0, 9093.0, 9097.0,
+      9099.0, 9100.0, 9101.0, 9101.0, 9104.0, 9106.0, 9106.0, 9112.0, 9115.0, 9117.0,
+      9117.0, 9120.0, 9139.0, 9144.0, 9149.0, 9158.0, 9158.0, 9162.0, 9167.0, 9170.0,
+      9173.0, 9176.0, 9178.0, 9181.0, 9190.0, 9192.0, 9212.0, 9213.0, 9219.0, 9227.0,
+      9229.0, 9233.0, 9234.0, 9239.0, 9240.0, 9242.0, 9245.0, 9245.0, 9246.0, 9247.0,
+      9249.0, 9252.0, 9255.0, 9255.0, 9263.0, 9265.0, 9273.0, 9275.0, 9282.0, 9283.0,
+      9285.0, 9288.0, 9289.0, 9291.0, 9305.0, 9308.0, 9310.0, 9314.0, 9326.0, 9326.0,
+      9329.0, 9331.0, 9331.0, 9333.0, 9338.0, 9345.0, 9348.0, 9349.0, 9359.0, 9360.0,
+      9362.0, 9367.0, 9367.0, 9372.0, 9374.0, 9375.0, 9382.0, 9384.0, 9389.0, 9391.0,
+      9392.0, 9401.0, 9401.0, 9402.0, 9406.0, 9417.0, 9420.0, 9422.0, 9424.0, 9441.0,
+      9443.0, 9445.0, 9445.0, 9448.0, 9450.0, 9451.0, 9451.0, 9451.0, 9452.0, 9454.0,
+      9459.0, 9460.0, 9462.0, 9465.0, 9468.0, 9468.0, 9469.0, 9470.0, 9479.0, 9488.0,
+      9493.0, 9493.0, 9504.0, 9509.0, 9514.0, 9515.0, 9535.0, 9536.0, 9537.0, 9539.0,
+      9540.0, 9556.0, 9559.0, 9560.0, 9561.0, 9564.0, 9567.0, 9569.0, 9575.0, 9578.0,
+      9581.0, 9594.0, 9597.0, 9597.0, 9599.0, 9605.0, 9605.0, 9608.0, 9614.0, 9615.0,
+      9617.0, 9620.0, 9625.0, 9626.0, 9627.0, 9629.0, 9629.0, 9633.0, 9637.0, 9638.0,
+      9638.0, 9641.0, 9649.0, 9654.0, 9656.0, 9662.0, 9664.0, 9667.0, 9668.0, 9669.0,
+      9671.0, 9676.0, 9676.0, 9683.0, 9683.0, 9683.0, 9684.0, 9687.0, 9688.0, 9688.0,
+      9692.0, 9695.0, 9695.0, 9697.0, 9698.0, 9699.0, 9700.0, 9702.0, 9716.0, 9717.0,
+      9717.0, 9718.0, 9718.0, 9733.0, 9737.0, 9739.0, 9741.0, 9744.0, 9746.0, 9760.0,
+      9760.0, 9763.0, 9769.0, 9770.0, 9774.0, 9775.0, 9778.0, 9781.0, 9781.0, 9789.0,
+      9790.0, 9792.0, 9796.0, 9799.0, 9801.0, 9804.0, 9807.0, 9809.0, 9814.0, 9816.0,
+      9816.0, 9818.0, 9820.0, 9823.0, 9828.0, 9830.0, 9831.0, 9832.0, 9832.0, 9833.0,
+      9834.0, 9835.0, 9838.0, 9839.0, 9843.0, 9851.0, 9852.0, 9853.0, 9853.0, 9853.0,
+      9863.0, 9864.0, 9865.0, 9866.0, 9866.0, 9871.0, 9875.0, 9880.0, 9880.0, 9882.0,
+      9882.0, 9882.0, 9884.0, 9890.0, 9898.0, 9900.0, 9906.0, 9911.0, 9914.0, 9914.0,
+      9920.0, 9921.0, 9922.0, 9925.0, 9929.0, 9936.0, 9943.0, 9953.0, 9955.0, 9957.0,
+      9958.0, 9958.0, 9959.0, 9963.0, 9970.0, 9971.0, 9971.0, 9972.0, 9976.0, 9978.0,
+      9979.0, 9985.0, 9992.0, 9992.0, 9995.0, 9995.0, 9999.0, 10000.0, 10007.0, 10021.0,
+      10022.0, 10032.0, 10036.0, 10036.0, 10046.0, 10046.0, 10049.0, 10055.0, 10055.0,
+      10065.0, 10070.0, 10076.0, 10081.0, 10082.0, 10090.0, 10092.0, 10099.0, 10100.0,
+      10107.0, 10110.0, 10111.0, 10113.0, 10114.0, 10120.0, 10122.0, 10127.0, 10130.0,
+      10130.0, 10133.0, 10142.0, 10148.0, 10158.0, 10160.0, 10165.0, 10170.0, 10173.0,
+      10177.0, 10178.0, 10180.0, 10181.0, 10182.0, 10183.0, 10185.0, 10188.0, 10193.0,
+      10193.0, 10196.0, 10196.0, 10197.0, 10197.0, 10207.0, 10211.0, 10215.0, 10215.0,
+      10222.0, 10223.0, 10224.0, 10236.0, 10246.0, 10257.0, 10276.0, 10277.0, 10285.0,
+      10285.0, 10286.0, 10289.0, 10290.0, 10290.0, 10293.0, 10305.0, 10316.0, 10323.0,
+      10323.0, 10335.0, 10335.0, 10337.0, 10346.0, 10347.0, 10351.0, 10355.0, 10360.0,
+      10361.0, 10364.0, 10371.0, 10372.0, 10379.0, 10380.0, 10385.0, 10390.0, 10394.0,
+      10395.0, 10399.0, 10406.0, 10422.0, 10428.0, 10432.0, 10434.0, 10450.0, 10453.0,
+      10457.0, 10457.0, 10458.0, 10462.0, 10469.0, 10470.0, 10470.0, 10473.0, 10476.0,
+      10476.0, 10497.0, 10497.0, 10499.0, 10503.0, 10513.0, 10515.0, 10516.0, 10516.0,
+      10526.0, 10532.0, 10536.0, 10539.0, 10539.0, 10545.0, 10550.0, 10553.0, 10596.0,
+      10602.0, 10611.0, 10615.0, 10635.0, 10638.0, 10640.0, 10640.0, 10641.0, 10642.0,
+      10644.0, 10650.0, 10653.0, 10678.0, 10691.0, 10697.0, 10700.0, 10700.0, 10702.0,
+      10707.0, 10709.0, 10714.0, 10716.0, 10718.0, 10719.0, 10722.0, 10722.0, 10722.0,
+      10724.0, 10724.0, 10726.0, 10727.0, 10737.0, 10738.0, 10743.0, 10745.0, 10757.0,
+      10757.0, 10764.0, 10765.0, 10767.0, 10769.0, 10779.0, 10788.0, 10794.0, 10794.0,
+      10800.0, 10804.0, 10811.0, 10814.0, 10827.0, 10829.0, 10832.0, 10835.0, 10835.0,
+      10835.0, 10836.0, 10841.0, 10847.0, 10851.0, 10852.0, 10859.0, 10860.0, 10863.0,
+      10883.0, 10884.0, 10885.0, 10898.0, 10898.0, 10900.0, 10901.0, 10911.0, 10911.0,
+      10912.0, 10922.0, 10927.0, 10931.0, 10931.0, 10932.0, 10932.0, 10944.0, 10944.0,
+      10947.0, 10969.0, 10974.0, 10975.0, 10975.0, 10990.0, 10990.0, 10995.0, 11003.0,
+      11004.0, 11004.0, 11016.0, 11020.0, 11024.0, 11031.0, 11032.0, 11046.0, 11056.0,
+      11060.0, 11062.0, 11066.0, 11067.0, 11069.0, 11087.0, 11090.0, 11091.0, 11096.0,
+      11101.0, 11102.0, 11104.0, 11106.0, 11108.0, 11110.0, 11116.0, 11119.0, 11123.0,
+      11123.0, 11124.0, 11142.0, 11146.0, 11147.0, 11151.0, 11153.0, 11165.0, 11173.0,
+      11201.0, 11215.0, 11220.0, 11221.0, 11221.0, 11222.0, 11228.0, 11230.0, 11236.0,
+      11242.0, 11243.0, 11247.0, 11251.0, 11282.0, 11290.0, 11291.0, 11299.0, 11307.0,
+      11326.0, 11328.0, 11328.0, 11328.0, 11335.0, 11343.0, 11364.0, 11366.0, 11368.0,
+      11374.0, 11381.0, 11385.0, 11399.0, 11411.0, 11412.0, 11419.0, 11425.0, 11429.0,
+      11433.0, 11437.0, 11439.0, 11445.0, 11448.0, 11452.0, 11455.0, 11455.0, 11461.0,
+      11467.0, 11472.0, 11477.0, 11481.0, 11482.0, 11490.0, 11491.0, 11492.0, 11502.0,
+      11506.0, 11511.0, 11513.0, 11529.0, 11541.0, 11542.0, 11545.0, 11548.0, 11558.0,
+      11561.0, 11568.0, 11582.0, 11588.0, 11588.0, 11588.0, 11590.0, 11594.0, 11598.0,
+      11606.0, 11613.0, 11615.0, 11621.0, 11621.0, 11632.0, 11634.0, 11635.0, 11640.0,
+      11641.0, 11645.0, 11645.0, 11655.0, 11663.0, 11676.0, 11677.0, 11678.0, 11693.0,
+      11702.0, 11712.0, 11716.0, 11719.0, 11725.0, 11726.0, 11744.0, 11747.0, 11757.0,
+      11760.0, 11763.0, 11764.0, 11766.0, 11769.0, 11774.0, 11798.0, 11806.0, 11816.0,
+      11837.0, 11838.0, 11843.0, 11844.0, 11846.0, 11847.0, 11853.0, 11881.0, 11882.0,
+      11883.0, 11884.0, 11886.0, 11889.0, 11907.0, 11926.0, 11932.0, 11932.0, 11958.0,
+      11962.0, 11991.0, 11992.0, 11995.0, 11995.0, 11998.0, 11999.0, 12001.0, 12009.0,
+      12015.0, 12044.0, 12059.0, 12063.0, 12092.0, 12102.0, 12113.0, 12115.0, 12118.0,
+      12131.0, 12140.0, 12156.0, 12159.0, 12197.0, 12197.0, 12204.0, 12211.0, 12227.0,
+      12227.0, 12230.0, 12232.0, 12232.0, 12233.0, 12238.0, 12252.0, 12254.0, 12259.0,
+      12272.0, 12273.0, 12282.0, 12289.0, 12297.0, 12299.0, 12318.0, 12318.0, 12326.0,
+      12327.0, 12363.0, 12373.0, 12379.0, 12383.0, 12385.0, 12396.0, 12396.0, 12417.0,
+      12421.0, 12427.0, 12429.0, 12446.0, 12465.0, 12475.0, 12479.0, 12484.0, 12485.0,
+      12488.0, 12493.0, 12505.0, 12556.0, 12556.0, 12564.0, 12565.0, 12577.0, 12584.0,
+      12585.0, 12589.0, 12591.0, 12597.0, 12620.0, 12626.0, 12626.0, 12629.0, 12630.0,
+      12631.0, 12658.0, 12661.0, 12666.0, 12676.0, 12680.0, 12681.0, 12682.0, 12690.0,
+      12711.0, 12712.0, 12714.0, 12722.0, 12723.0, 12733.0, 12750.0, 12751.0, 12753.0,
+      12756.0, 12760.0, 12767.0, 12767.0, 12788.0, 12788.0, 12794.0, 12794.0, 12801.0,
+      12806.0, 12818.0, 12823.0, 12840.0, 12866.0, 12879.0, 12884.0, 12886.0, 12893.0,
+      12918.0, 12929.0, 12947.0, 12968.0, 12970.0, 12975.0, 12975.0, 12979.0, 12980.0,
+      12984.0, 12995.0, 12998.0, 13001.0, 13010.0, 13054.0, 13055.0, 13060.0, 13082.0,
+      13090.0, 13101.0, 13105.0, 13106.0, 13110.0, 13117.0, 13122.0, 13132.0, 13140.0,
+      13155.0, 13180.0, 13180.0, 13181.0, 13209.0, 13215.0, 13236.0, 13264.0, 13272.0,
+      13273.0, 13273.0, 13288.0, 13289.0, 13307.0, 13314.0, 13315.0, 13315.0, 13333.0,
+      13346.0, 13352.0, 13378.0, 13398.0, 13407.0, 13407.0, 13433.0, 13448.0, 13449.0,
+      13456.0, 13490.0, 13496.0, 13500.0, 13505.0, 13528.0, 13544.0, 13546.0, 13555.0,
+      13560.0, 13574.0, 13575.0, 13591.0, 13595.0, 13614.0, 13616.0, 13637.0, 13649.0,
+      13666.0, 13684.0, 13686.0, 13709.0, 13711.0, 13714.0, 13742.0, 13754.0, 13758.0,
+      13761.0, 13765.0, 13768.0, 13771.0, 13772.0, 13786.0, 13798.0, 13820.0, 13826.0,
+      13830.0, 13835.0, 13839.0, 13842.0, 13842.0, 13847.0, 13852.0, 13875.0, 13912.0,
+      13929.0, 13959.0, 13967.0, 13969.0, 13982.0, 14004.0, 14025.0, 14025.0, 14038.0,
+      14044.0, 14050.0, 14073.0, 14077.0, 14079.0, 14086.0, 14099.0, 14150.0, 14166.0,
+      14167.0, 14169.0, 14171.0, 14179.0, 14186.0, 14197.0, 14212.0, 14249.0, 14268.0,
+      14269.0, 14311.0, 14326.0, 14326.0, 14335.0, 14360.0, 14383.0, 14452.0, 14472.0,
+      14474.0, 14499.0, 14499.0, 14507.0, 14521.0, 14528.0, 14536.0, 14551.0, 14583.0,
+      14590.0, 14593.0, 14593.0, 14617.0, 14620.0, 14646.0, 14650.0, 14673.0, 14698.0,
+      14718.0, 14740.0, 14740.0, 14745.0, 14747.0, 14747.0, 14751.0, 14767.0, 14768.0,
+      14773.0, 14782.0, 14806.0, 14812.0, 14812.0, 14816.0, 14819.0, 14825.0, 14832.0,
+      14855.0, 14874.0, 14894.0, 14894.0, 14906.0, 14917.0, 14956.0, 14996.0, 15000.0,
+      15005.0, 15010.0, 15033.0, 15038.0, 15045.0, 15077.0, 15099.0, 15114.0, 15122.0,
+      15122.0, 15153.0, 15163.0, 15165.0, 15206.0, 15212.0, 15245.0, 15285.0, 15287.0,
+      15306.0, 15354.0, 15375.0, 15435.0, 15449.0, 15452.0, 15504.0, 15506.0, 15506.0,
+      15537.0, 15542.0, 15557.0, 15598.0, 15611.0, 15613.0, 15625.0, 15625.0, 15648.0,
+      15658.0, 15660.0, 15665.0, 15675.0, 15709.0, 15716.0, 15717.0, 15723.0, 15741.0,
+      15768.0, 15803.0, 15807.0, 15811.0, 15819.0, 15837.0, 15861.0, 15865.0, 15866.0,
+      15868.0, 15885.0, 15990.0, 16003.0, 16046.0, 16070.0, 16119.0, 16152.0, 16158.0,
+      16168.0, 16169.0, 16313.0, 16314.0, 16316.0, 16336.0, 16376.0, 16381.0, 16393.0,
+      16422.0, 16468.0, 16566.0, 16620.0, 16644.0, 16665.0, 16672.0, 16697.0, 16725.0,
+      16739.0, 16758.0, 16783.0, 16842.0, 16855.0, 16862.0, 16926.0, 16989.0, 16995.0,
+      17092.0, 17163.0, 17204.0, 17225.0, 17233.0, 17281.0, 17296.0, 17311.0, 17315.0,
+      17361.0, 17367.0, 17372.0, 17374.0, 17440.0, 17449.0, 17474.0, 17479.0, 17492.0,
+      17507.0, 17564.0, 17587.0, 17589.0, 17655.0, 17689.0, 17730.0, 17741.0, 17758.0,
+      17798.0, 17817.0, 17837.0, 17872.0, 17873.0, 17926.0, 17927.0, 17978.0, 18005.0,
+      18025.0, 18027.0, 18083.0, 18113.0, 18182.0, 18186.0, 18237.0, 18301.0, 18441.0,
+      18580.0, 18666.0, 18678.0, 18709.0, 18761.0, 18786.0, 18788.0, 18830.0, 18835.0,
+      18835.0, 18938.0, 18966.0, 19114.0, 19212.0, 19219.0, 19220.0, 19283.0, 19285.0,
+      19321.0, 19371.0, 19446.0, 19486.0, 19628.0, 19668.0, 19682.0, 19759.0, 19772.0,
+      19891.0, 20050.0, 20241.0, 20259.0, 20350.0, 20766.0, 20768.0, 21202.0, 21320.0,
+      21364.0, 21397.0, 21435.0, 21495.0, 21854.0, 21925.0, 22696.0, 23492.0, 24403.0]
+  - name: Yearly data density per patient
+    status: COMPLETED
+    minimum: 1.0
+    maximum: 77.0
+    mean: 7.85
+    median: 5.0
+    values:
+      1950: {2: 1}
+      1954: {3: 1}
+      1957: {5: 1}
+      1960: {2: 2, 7: 1, 8: 1}
+      1963: {2: 1, 4: 1}
+      1964: {1: 4, 2: 3}
+      1965: {1: 1, 2: 1, 3: 1, 5: 1}
+      1966: {1: 1, 2: 1, 3: 1}
+      1967: {2: 6, 4: 1}
+      1968: {1: 2, 2: 1, 4: 1, 5: 1}
+      1969: {1: 3, 2: 6, 4: 1}
+      1970: {1: 1, 2: 9, 3: 1, 4: 1, 5: 1}
+      1971: {1: 2, 2: 6, 5: 1}
+      1972: {1: 3, 2: 4, 3: 3, 4: 1, 6: 1}
+      1973: {1: 6, 2: 9, 3: 1, 4: 1, 7: 1, 9: 1}
+      1974: {1: 4, 2: 7, 3: 3, 4: 2, 5: 1}
+      1975: {1: 3, 2: 10, 3: 1, 4: 3, 5: 1, 7: 1}
+      1976: {1: 4, 2: 11, 3: 7, 4: 7, 7: 1, 8: 1}
+      1977: {1: 3, 2: 11, 3: 2, 4: 2, 5: 1, 7: 1}
+      1978: {1: 9, 2: 11, 3: 3, 4: 5}
+      1979: {1: 7, 2: 13, 3: 1, 4: 5, 5: 1, 9: 1}
+      1980: {1: 12, 2: 21, 3: 5, 4: 6, 5: 1, 6: 1}
+      1981: {1: 6, 2: 18, 3: 1, 4: 4, 5: 1, 6: 1}
+      1982: {1: 15, 2: 18, 3: 5, 4: 5, 5: 5}
+      1983: {1: 11, 2: 20, 3: 4, 4: 8}
+      1984: {1: 21, 2: 22, 3: 5, 4: 13, 5: 5, 9: 1}
+      1985: {1: 24, 2: 35, 3: 10, 4: 9, 5: 4}
+      1986: {1: 22, 2: 25, 3: 8, 4: 11, 5: 2}
+      1987: {1: 21, 2: 26, 3: 14, 4: 15}
+      1988: {1: 29, 2: 35, 3: 18, 4: 11, 5: 1}
+      1989: {1: 30, 2: 29, 3: 16, 4: 9, 5: 1, 6: 1}
+      1990: {1: 56, 2: 61, 3: 19, 4: 17, 5: 4}
+      1991: {1: 56, 2: 38, 3: 20, 4: 25, 5: 1}
+      1992: {1: 53, 2: 54, 3: 21, 4: 23, 5: 7, 6: 2}
+      1993: {1: 64, 2: 61, 3: 23, 4: 25, 5: 7, 6: 2}
+      1994: {1: 86, 2: 78, 3: 33, 4: 23, 5: 11, 6: 3, 7: 1}
+      1995: {1: 91, 2: 86, 3: 50, 4: 45, 5: 5, 6: 1, 8: 1}
+      1996: {1: 105, 2: 119, 3: 37, 4: 33, 5: 10, 6: 3}
+      1997: {1: 123, 2: 119, 3: 57, 4: 43, 5: 18, 6: 4, 8: 2}
+      1998: {1: 165, 2: 132, 3: 66, 4: 57, 5: 23, 6: 3, 7: 1}
+      1999: {1: 169, 2: 140, 3: 79, 4: 65, 5: 24, 6: 5, 7: 5}
+      2000: {1: 220, 2: 171, 3: 68, 4: 73, 5: 30, 6: 7, 7: 3, 9: 1}
+      2001: {1: 268, 2: 173, 3: 76, 4: 61, 5: 27, 6: 13, 7: 5, 16: 1}
+      2002: {1: 293, 2: 200, 3: 73, 4: 60, 5: 39, 6: 16, 7: 3, 9: 1}
+      2003: {1: 330, 2: 224, 3: 119, 4: 58, 5: 40, 6: 10, 7: 6, 8: 3}
+      2004: {1: 379, 2: 241, 3: 115, 4: 73, 5: 34, 6: 14, 7: 2, 8: 2}
+      2005: {1: 419, 2: 256, 3: 127, 4: 65, 5: 40, 6: 13, 7: 3, 8: 3}
+      2006: {1: 457, 2: 269, 3: 136, 4: 67, 5: 51, 6: 22, 7: 8, 8: 4, 9: 3, 10: 2}
+      2007: {1: 505, 2: 291, 3: 137, 4: 59, 5: 47, 6: 22, 7: 10, 8: 8, 9: 2}
+      2008: {1: 604, 2: 345, 3: 152, 4: 72, 5: 55, 6: 27, 7: 8, 8: 3}
+      2009: {1: 609, 2: 361, 3: 183, 4: 75, 5: 58, 6: 19, 7: 7, 8: 4, 9: 3}
+      2010: {1: 667, 2: 360, 3: 153, 4: 89, 5: 55, 6: 19, 7: 7, 9: 6, 11: 1, 16: 1}
+      2011: {1: 645, 2: 404, 3: 175, 4: 63, 5: 56, 6: 26, 7: 8, 8: 2, 9: 1}
+      2012: {1: 766, 2: 404, 3: 197, 4: 89, 5: 62, 6: 25, 7: 14, 8: 3, 9: 1}
+      2013: {1: 798, 2: 480, 3: 192, 4: 105, 5: 84, 6: 32, 7: 13, 8: 1, 9: 2}
+      2014: {1: 1010, 2: 635, 3: 306, 4: 154, 5: 93, 6: 38, 7: 11, 8: 7, 9: 2, 10: 3,
+        11: 1, 15: 1}
+      2015: {1: 633, 2: 485, 3: 177, 4: 101, 5: 103, 6: 115, 7: 144, 8: 150, 9: 354,
+        10: 512, 11: 400, 12: 242, 13: 123, 14: 66, 15: 48, 16: 38, 17: 33, 18: 26,
+        19: 41, 20: 53, 21: 52, 22: 22, 23: 23, 24: 12, 25: 14, 26: 4, 27: 5, 28: 3,
+        29: 4, 30: 5, 31: 3, 32: 3, 33: 2, 34: 1, 35: 3, 36: 1, 38: 3, 41: 1}
+      2016: {1: 210, 2: 159, 3: 94, 4: 73, 5: 122, 6: 117, 7: 207, 8: 303, 9: 639,
+        10: 693, 11: 460, 12: 237, 13: 135, 14: 88, 15: 77, 16: 103, 17: 105, 18: 148,
+        19: 178, 20: 237, 21: 186, 22: 108, 23: 64, 24: 41, 25: 34, 26: 32, 27: 29,
+        28: 32, 29: 36, 30: 33, 31: 28, 32: 19, 33: 21, 34: 13, 35: 6, 36: 6, 37: 7,
+        38: 3, 39: 8, 40: 2, 41: 8, 42: 7, 43: 3, 44: 2, 45: 1, 48: 2, 49: 1, 50: 1,
+        51: 1, 54: 3, 56: 2, 57: 1, 64: 1, 68: 1}
+      2017: {1: 130, 2: 109, 3: 85, 4: 71, 5: 99, 6: 123, 7: 205, 8: 260, 9: 577,
+        10: 651, 11: 495, 12: 243, 13: 102, 14: 104, 15: 100, 16: 94, 17: 123, 18: 144,
+        19: 184, 20: 232, 21: 197, 22: 151, 23: 74, 24: 47, 25: 41, 26: 34, 27: 27,
+        28: 40, 29: 33, 30: 36, 31: 33, 32: 40, 33: 22, 34: 18, 35: 18, 36: 9, 37: 8,
+        38: 8, 39: 6, 40: 12, 41: 6, 42: 3, 43: 7, 44: 2, 45: 5, 46: 4, 47: 1, 48: 4,
+        49: 3, 50: 1, 51: 1, 52: 2, 53: 1, 54: 2, 55: 1, 56: 2, 58: 2, 61: 1, 68: 1}
+      2018: {1: 134, 2: 153, 3: 107, 4: 86, 5: 87, 6: 124, 7: 164, 8: 219, 9: 516,
+        10: 429, 11: 394, 12: 248, 13: 106, 14: 115, 15: 101, 16: 110, 17: 126, 18: 143,
+        19: 231, 20: 233, 21: 200, 22: 131, 23: 63, 24: 38, 25: 34, 26: 24, 27: 33,
+        28: 32, 29: 41, 30: 42, 31: 37, 32: 34, 33: 19, 34: 22, 35: 14, 36: 6, 37: 9,
+        38: 9, 39: 20, 40: 13, 41: 4, 42: 3, 43: 5, 44: 2, 46: 2, 47: 2, 48: 1, 49: 3,
+        50: 3, 53: 1, 55: 1, 56: 1, 58: 1}
+      2019: {1: 89, 2: 79, 3: 72, 4: 69, 5: 86, 6: 120, 7: 188, 8: 281, 9: 619, 10: 335,
+        11: 208, 12: 191, 13: 94, 14: 114, 15: 113, 16: 150, 17: 184, 18: 227, 19: 256,
+        20: 204, 21: 205, 22: 144, 23: 72, 24: 47, 25: 34, 26: 31, 27: 42, 28: 39,
+        29: 31, 30: 37, 31: 41, 32: 32, 33: 25, 34: 28, 35: 20, 36: 32, 37: 21, 38: 35,
+        39: 22, 40: 29, 41: 18, 42: 10, 43: 6, 44: 6, 45: 4, 46: 3, 47: 2, 48: 2,
+        49: 2, 50: 3, 51: 2, 52: 3, 53: 3, 54: 1, 55: 4, 56: 1, 57: 1, 58: 2, 59: 3,
+        60: 2, 61: 2, 63: 1, 64: 2, 66: 1, 67: 1, 74: 1, 76: 1, 77: 1}
+      2020: {1: 391, 2: 277, 3: 388, 4: 323, 5: 244, 6: 240, 7: 192, 8: 216, 9: 305,
+        10: 178, 11: 144, 12: 126, 13: 89, 14: 62, 15: 73, 16: 59, 17: 80, 18: 71,
+        19: 83, 20: 78, 21: 57, 22: 59, 23: 33, 24: 29, 25: 34, 26: 35, 27: 32, 28: 31,
+        29: 21, 30: 22, 31: 18, 32: 15, 33: 10, 34: 12, 35: 12, 36: 13, 37: 13, 38: 3,
+        39: 6, 40: 6, 41: 2, 42: 4, 43: 6, 44: 2, 45: 3, 46: 5, 47: 6, 48: 8, 50: 4,
+        51: 1, 52: 1, 54: 1, 55: 2, 56: 1, 57: 1, 58: 1, 62: 1, 69: 1}
+      2021: {1: 524, 2: 416, 3: 442, 4: 319, 5: 187, 6: 166, 7: 113, 8: 150, 9: 187,
+        10: 141, 11: 117, 12: 81, 13: 56, 14: 38, 15: 32, 16: 38, 17: 43, 18: 60,
+        19: 50, 20: 51, 21: 40, 22: 20, 23: 16, 24: 15, 25: 16, 26: 16, 27: 19, 28: 12,
+        29: 15, 30: 10, 31: 11, 32: 3, 33: 7, 34: 6, 35: 5, 36: 5, 37: 4, 38: 7, 39: 2,
+        40: 3, 41: 1, 42: 2, 43: 2, 44: 1, 45: 2, 46: 2, 47: 2, 48: 1, 49: 1, 52: 3,
+        53: 1, 55: 1, 56: 1, 58: 1}
+      2022: {1: 372, 2: 300, 3: 490, 4: 272, 5: 166, 6: 164, 7: 169, 8: 179, 9: 221,
+        10: 168, 11: 97, 12: 46, 13: 31, 14: 31, 15: 25, 16: 41, 17: 24, 18: 34, 19: 29,
+        20: 16, 21: 8, 22: 6, 23: 8, 24: 7, 25: 8, 26: 6, 27: 9, 28: 3, 29: 3, 30: 4,
+        31: 6, 32: 1, 34: 2, 35: 2, 36: 1, 39: 1, 41: 3, 43: 1, 44: 1, 46: 1}
+      2023: {1: 41, 2: 11, 3: 10, 4: 13, 5: 2, 7: 1, 8: 1, 9: 4}
+  - name: Relapse data density (records per person per year)
+    status: COMPLETED
+    minimum: 0.02
+    maximum: 15.22
+    mean: 0.33
+    median: 0.23
+    values: {0.11: 203, 0.14: 195, 0.13: 185, 0.09: 180, 0.1: 178, 0.08: 178, 0.07: 173,
+      0.12: 163, 0.15: 159, 0.18: 154, 0.19: 151, 0.06: 145, 0.16: 145, 0.17: 136,
+      0.05: 127, 0.21: 125, 0.2: 123, 0.26: 123, 0.23: 121, 0.27: 117, 0.22: 116,
+      0.25: 116, 0.04: 113, 0.24: 104, 0.28: 94, 0.31: 93, 0.29: 90, 0.36: 88, 0.34: 85,
+      0.32: 84, 0.33: 82, 0.35: 78, 0.3: 78, 0.37: 70, 0.4: 70, 0.03: 67, 0.38: 63,
+      0.39: 63, 0.42: 61, 0.44: 55, 0.41: 54, 0.49: 48, 0.5: 46, 0.47: 44, 0.51: 43,
+      0.43: 42, 0.46: 42, 0.45: 41, 0.54: 39, 0.02: 35, 0.52: 34, 0.53: 33, 0.59: 32,
+      0.48: 32, 0.63: 29, 0.69: 28, 0.55: 27, 0.56: 27, 0.57: 26, 0.6: 25, 0.62: 25,
+      0.72: 23, 0.58: 23, 0.73: 21, 0.74: 19, 0.65: 19, 0.64: 19, 0.67: 18, 0.68: 17,
+      0.66: 16, 0.61: 16, 0.89: 15, 0.71: 15, 0.7: 14, 0.85: 13, 0.8: 13, 0.77: 13,
+      0.82: 12, 0.84: 11, 0.76: 11, 0.78: 10, 0.87: 9, 1.0: 9, 0.86: 9, 1.04: 8, 0.83: 8,
+      1.03: 8, 0.93: 7, 0.94: 7, 0.88: 7, 0.75: 7, 0.79: 7, 0.91: 7, 1.05: 6, 0.81: 6,
+      1.17: 6, 0.96: 6, 1.02: 6, 0.98: 6, 0.9: 6, 0.92: 5, 1.23: 5, 1.26: 4, 1.28: 4,
+      1.57: 4, 1.19: 4, 1.3: 4, 1.13: 4, 0.97: 4, 1.01: 4, 1.21: 3, 1.14: 3, 0.95: 3,
+      1.16: 3, 1.49: 3, 1.39: 3, 1.11: 3, 1.12: 3, 1.06: 3, 1.31: 3, 1.71: 3, 1.25: 2,
+      1.53: 2, 2.65: 2, 1.56: 2, 0.99: 2, 1.36: 2, 1.07: 2, 1.08: 2, 1.29: 2, 2.73: 2,
+      1.47: 2, 1.62: 2, 1.34: 2, 1.1: 2, 1.37: 2, 1.15: 2, 1.27: 2, 1.65: 2, 1.2: 2,
+      1.22: 2, 1.6: 2, 1.88: 2, 1.4: 2, 1.7: 2, 1.68: 1, 4.57: 1, 1.73: 1, 1.42: 1,
+      1.45: 1, 1.64: 1, 3.08: 1, 2.24: 1, 2.61: 1, 2.09: 1, 4.09: 1, 2.81: 1, 3.55: 1,
+      3.84: 1, 2.41: 1, 2.88: 1, 1.72: 1, 14.61: 1, 1.98: 1, 2.15: 1, 1.9: 1, 5.0: 1,
+      2.29: 1, 15.22: 1, 1.59: 1, 2.03: 1, 2.06: 1, 1.87: 1, 1.69: 1, 1.33: 1, 2.51: 1,
+      2.19: 1, 1.76: 1, 3.56: 1, 1.38: 1, 7.02: 1, 2.77: 1, 1.44: 1, 1.85: 1, 1.52: 1,
+      3.15: 1, 4.51: 1, 2.75: 1, 1.81: 1, 2.28: 1, 4.68: 1, 4.85: 1, 1.48: 1, 3.04: 1,
+      1.09: 1, 3.18: 1, 7.94: 1, 1.43: 1, 1.95: 1, 1.89: 1, 2.0: 1, 1.74: 1, 2.05: 1,
+      5.14: 1, 2.37: 1, 2.12: 1, 1.82: 1, 7.16: 1, 6.41: 1, 1.83: 1, 1.55: 1, 1.66: 1,
+      2.14: 1, 1.58: 1}
+  - name: MRI data density (records per person per year)
+    status: COMPLETED
+    minimum: 0.02
+    maximum: 8.12
+    mean: 0.34
+    median: 0.25
+    values: {0.05: 153, 0.04: 153, 0.13: 143, 0.06: 142, 0.07: 142, 0.09: 138, 0.11: 126,
+      0.08: 121, 0.1: 121, 0.18: 117, 0.17: 117, 0.15: 114, 0.14: 114, 0.12: 109,
+      0.16: 109, 0.03: 106, 0.24: 104, 0.2: 100, 0.21: 96, 0.28: 96, 0.19: 96, 0.29: 95,
+      0.22: 92, 0.26: 88, 0.23: 86, 0.3: 85, 0.25: 82, 0.27: 81, 0.31: 76, 0.33: 74,
+      0.37: 69, 0.36: 61, 0.32: 57, 0.35: 56, 0.39: 55, 0.44: 55, 0.34: 54, 0.38: 51,
+      0.02: 51, 0.41: 48, 0.43: 43, 0.42: 40, 0.47: 40, 0.54: 38, 0.48: 37, 0.46: 36,
+      0.4: 36, 0.55: 33, 0.65: 32, 0.45: 32, 0.66: 32, 0.5: 31, 0.49: 31, 0.6: 30,
+      0.64: 30, 0.58: 30, 0.51: 29, 0.53: 29, 0.59: 29, 0.52: 29, 0.57: 27, 0.68: 27,
+      0.72: 26, 0.7: 26, 0.56: 24, 0.62: 22, 0.75: 22, 0.69: 21, 0.67: 21, 0.74: 21,
+      0.82: 21, 0.61: 21, 0.63: 20, 0.78: 19, 0.84: 18, 0.77: 17, 0.71: 17, 0.88: 17,
+      0.73: 17, 0.81: 17, 0.76: 16, 0.79: 15, 0.89: 14, 0.86: 13, 0.93: 13, 0.85: 12,
+      0.92: 12, 0.91: 12, 0.83: 12, 0.95: 11, 0.8: 11, 1.05: 10, 0.9: 10, 0.97: 10,
+      0.98: 10, 1.06: 9, 1.02: 9, 1.14: 9, 0.87: 8, 0.94: 8, 1.03: 8, 1.26: 7, 0.96: 7,
+      1.13: 7, 1.07: 6, 0.99: 6, 1.21: 6, 1.01: 5, 1.04: 5, 1.08: 5, 1.23: 5, 1.17: 5,
+      1.15: 4, 1.2: 4, 1.27: 4, 1.29: 4, 1.43: 4, 1.3: 4, 1.22: 4, 1.11: 4, 1.33: 4,
+      1.25: 4, 1.28: 3, 1.0: 3, 1.24: 2, 1.19: 2, 1.1: 2, 1.9: 2, 1.36: 2, 1.93: 2,
+      1.49: 2, 1.34: 2, 1.87: 2, 1.37: 2, 1.32: 2, 1.7: 2, 1.18: 2, 1.62: 2, 2.08: 1,
+      1.38: 1, 1.4: 1, 1.8: 1, 1.89: 1, 4.57: 1, 2.03: 1, 3.35: 1, 1.5: 1, 1.86: 1,
+      8.12: 1, 1.96: 1, 1.45: 1, 1.66: 1, 2.17: 1, 1.55: 1, 2.88: 1, 2.36: 1, 2.33: 1,
+      1.09: 1, 1.6: 1, 1.56: 1, 2.75: 1, 2.77: 1, 1.57: 1, 1.75: 1, 1.76: 1, 5.14: 1,
+      1.47: 1, 1.59: 1, 1.44: 1, 1.88: 1, 1.12: 1, 2.32: 1, 1.31: 1, 3.18: 1, 1.16: 1,
+      3.15: 1, 7.16: 1, 2.67: 1, 1.65: 1, 1.95: 1}
+  - name: Distinct drugs per patient
+    status: COMPLETED
+    minimum: 1.0
+    maximum: 7.0
+    mean: 1.81
+    median: 2.0
+    values: {1: 2146, 2: 1373, 3: 547, 4: 225, 5: 77, 6: 20, 7: 5}
+  - {name: Distinct procedures per patient, status: NO DATA TO CHECK}
+  - name: MS subtype transition statistics
+    status: COMPLETED
+    result:
+      RRMS-SPMS: {count: 1017, '%': 21.74}
+      PPMS-RRMS: {count: 270, '%': 5.77}
+  - name: Data density (records per person) | diagnosis
+    status: COMPLETED
+    minimum: 1.0
+    maximum: 5.0
+    mean: 2.24
+    median: 2.0
+    values: {2: 3422, 3: 1211, 1: 172, 4: 49, 5: 2}
+  - {name: Data density (records per person) | symptom, status: NO DATA TO CHECK}
+  - name: Data density (records per person) | relapse
+    status: COMPLETED
+    minimum: 1.0
+    maximum: 53.0
+    mean: 3.93
+    median: 3.0
+    values: {1: 1521, 2: 1140, 3: 977, 4: 673, 5: 518, 6: 379, 7: 252, 8: 163, 9: 115,
+      10: 95, 11: 67, 12: 50, 13: 48, 14: 28, 16: 23, 15: 16, 21: 11, 19: 11, 18: 10,
+      17: 9, 20: 9, 23: 8, 22: 5, 30: 4, 26: 4, 24: 3, 36: 2, 25: 2, 28: 1, 53: 1,
+      39: 1, 29: 1, 31: 1}
+  - name: Data density (records per person) | observation
+    status: COMPLETED
+    minimum: 1.0
+    maximum: 248.0
+    mean: 51.16
+    median: 45.0
+    values: {9: 197, 8: 132, 18: 125, 45: 124, 36: 123, 1: 109, 48: 91, 43: 91, 40: 91,
+      53: 91, 27: 90, 54: 90, 38: 88, 44: 88, 16: 86, 7: 85, 51: 85, 52: 85, 49: 84,
+      42: 84, 32: 82, 60: 81, 56: 81, 41: 80, 29: 78, 35: 76, 39: 76, 46: 74, 34: 72,
+      31: 72, 50: 72, 30: 71, 47: 70, 55: 70, 17: 69, 33: 69, 37: 68, 24: 67, 15: 66,
+      59: 65, 25: 65, 26: 65, 14: 61, 23: 61, 22: 60, 63: 59, 28: 59, 69: 58, 21: 58,
+      61: 58, 57: 56, 58: 56, 70: 55, 66: 52, 67: 51, 68: 48, 65: 48, 12: 46, 62: 45,
+      13: 45, 78: 45, 71: 44, 72: 44, 76: 42, 75: 42, 73: 42, 74: 42, 86: 40, 85: 35,
+      77: 35, 79: 34, 80: 34, 64: 34, 81: 34, 90: 33, 20: 32, 82: 31, 87: 29, 19: 28,
+      89: 27, 83: 27, 88: 27, 98: 27, 84: 25, 10: 24, 94: 23, 92: 22, 95: 19, 110: 19,
+      4: 19, 96: 19, 6: 19, 106: 18, 101: 18, 99: 18, 97: 18, 91: 18, 111: 17, 103: 17,
+      2: 17, 93: 16, 112: 16, 11: 16, 116: 15, 108: 15, 104: 15, 102: 13, 100: 13,
+      107: 12, 5: 12, 105: 12, 113: 11, 114: 11, 128: 10, 130: 10, 117: 9, 115: 9,
+      3: 9, 109: 9, 129: 8, 140: 8, 121: 8, 138: 8, 132: 8, 127: 7, 120: 7, 126: 7,
+      146: 7, 133: 7, 148: 7, 150: 6, 161: 6, 134: 6, 157: 6, 135: 6, 118: 6, 136: 6,
+      158: 6, 131: 6, 137: 6, 142: 5, 124: 5, 139: 5, 166: 5, 154: 5, 145: 5, 144: 5,
+      125: 5, 151: 5, 164: 5, 123: 5, 119: 5, 143: 5, 141: 4, 162: 4, 152: 4, 168: 4,
+      153: 4, 169: 4, 122: 4, 201: 3, 155: 3, 175: 3, 159: 3, 172: 3, 149: 3, 147: 3,
+      165: 2, 219: 2, 167: 2, 177: 2, 163: 2, 170: 2, 160: 2, 192: 2, 182: 2, 156: 2,
+      176: 1, 174: 1, 181: 1, 220: 1, 248: 1, 180: 1, 197: 1, 199: 1, 188: 1, 184: 1,
+      183: 1, 223: 1, 185: 1, 214: 1, 178: 1, 191: 1, 209: 1, 210: 1, 171: 1}
+  - name: Data density (records per person) | measurement
+    status: COMPLETED
+    minimum: 1.0
+    maximum: 49.0
+    mean: 9.19
+    median: 8.0
+    values: {2: 469, 3: 438, 1: 437, 4: 420, 5: 407, 6: 376, 7: 355, 8: 345, 10: 306,
+      11: 284, 9: 283, 12: 265, 13: 226, 14: 223, 15: 200, 16: 180, 18: 140, 17: 140,
+      19: 120, 20: 102, 22: 75, 21: 69, 24: 44, 23: 41, 25: 29, 26: 25, 28: 21, 27: 18,
+      29: 15, 30: 10, 32: 5, 33: 4, 34: 4, 31: 2, 36: 2, 35: 1, 49: 1}
+  - name: Data density (records per person) | drug_exposure
+    status: COMPLETED
+    minimum: 1.0
+    maximum: 12.0
+    mean: 2.21
+    median: 2.0
+    values: {1: 1756, 2: 1279, 3: 679, 4: 339, 5: 179, 6: 82, 7: 37, 8: 20, 9: 11,
+      10: 10, 12: 1}
+  - {name: Data density (records per person) | procedure, status: NO DATA TO CHECK}
+  - name: Data density (records per person) | biosample
+    status: COMPLETED
+    minimum: 1.0
+    maximum: 2.0
+    mean: 1.19
+    median: 1.0
+    values: {1: 17, 2: 4}
+  - name: Data density per observation (records per person) | EDSS
+    status: COMPLETED
+    minimum: 1.0
+    maximum: 35.0
+    mean: 6.93
+    median: 6.0
+    values: {5: 653, 6: 644, 7: 565, 1: 551, 4: 519, 8: 501, 2: 491, 3: 416, 9: 389,
+      10: 356, 11: 307, 12: 208, 13: 168, 14: 112, 15: 105, 16: 71, 17: 55, 18: 45,
+      19: 35, 20: 29, 21: 16, 23: 7, 22: 7, 24: 6, 25: 4, 27: 4, 28: 1, 26: 1, 29: 1,
+      35: 1}
+  - name: Data density per observation (records per person) | FSS
+    status: COMPLETED
+    minimum: 1.0
+    maximum: 178.0
+    mean: 38.04
+    median: 34.0
+    values: {7: 218, 14: 154, 28: 152, 21: 149, 35: 147, 6: 140, 34: 122, 36: 119,
+      31: 115, 26: 114, 29: 112, 37: 111, 30: 110, 22: 110, 39: 108, 42: 107, 24: 105,
+      33: 104, 12: 102, 5: 102, 27: 99, 20: 99, 41: 97, 19: 95, 32: 95, 13: 93, 40: 90,
+      23: 89, 45: 84, 38: 84, 49: 83, 17: 82, 15: 80, 18: 80, 43: 79, 11: 78, 25: 77,
+      16: 74, 10: 71, 44: 69, 52: 68, 48: 66, 51: 63, 47: 62, 50: 61, 46: 61, 53: 57,
+      56: 55, 9: 55, 54: 54, 57: 51, 60: 50, 8: 49, 55: 48, 61: 45, 59: 42, 58: 41,
+      63: 39, 64: 39, 67: 37, 65: 34, 62: 32, 66: 31, 70: 31, 79: 29, 68: 28, 73: 26,
+      82: 25, 71: 24, 4: 24, 76: 24, 72: 23, 74: 23, 85: 22, 1: 22, 69: 22, 75: 21,
+      78: 19, 84: 18, 83: 15, 88: 14, 81: 14, 90: 13, 3: 13, 99: 13, 101: 13, 100: 12,
+      80: 12, 77: 11, 105: 11, 119: 10, 86: 10, 2: 10, 87: 10, 113: 9, 95: 9, 93: 9,
+      91: 9, 96: 8, 118: 8, 94: 8, 112: 8, 107: 8, 89: 8, 106: 7, 92: 7, 98: 7, 115: 6,
+      117: 6, 104: 6, 116: 6, 102: 6, 128: 6, 109: 6, 108: 6, 97: 5, 130: 5, 122: 5,
+      110: 5, 103: 5, 126: 5, 124: 5, 125: 4, 111: 4, 120: 4, 114: 3, 143: 3, 134: 3,
+      121: 3, 139: 2, 133: 2, 127: 2, 129: 2, 136: 2, 151: 2, 165: 2, 132: 2, 140: 2,
+      169: 2, 148: 1, 149: 1, 178: 1, 135: 1, 159: 1, 141: 1, 131: 1, 123: 1, 144: 1,
+      155: 1, 145: 1, 170: 1}
+  - {name: Data density per observation (records per person) | 9HPT, status: NO DATA
+      TO CHECK}
+  - {name: Data density per observation (records per person) | T25FWT, status: NO
+      DATA TO CHECK}
+  - {name: Data density per observation (records per person) | SDMT, status: NO DATA
+      TO CHECK}
+  - name: Pre HET record counts | EDSS
+    status: COMPLETED
+    HET population size: 857
+    1 year prior: {minimum: 0.0, maximum: 9.0, mean: 1.3, median: 1.0, Q1: 0.0, Q3: 2.0,
+      IQR: 2.0}
+    2 years prior: {minimum: 0.0, maximum: 10.0, mean: 1.92, median: 1.0, Q1: 0.0,
+      Q3: 3.0, IQR: 3.0}
+  - name: Pre HET record counts | T25FWT
+    status: COMPLETED
+    HET population size: 857
+    1 year prior: {minimum: 0.0, maximum: 0.0, mean: 0.0, median: 0.0, Q1: 0.0, Q3: 0.0,
+      IQR: 0.0}
+    2 years prior: {minimum: 0.0, maximum: 0.0, mean: 0.0, median: 0.0, Q1: 0.0, Q3: 0.0,
+      IQR: 0.0}
+  - name: Pre HET record counts | SDMT
+    status: COMPLETED
+    HET population size: 857
+    1 year prior: {minimum: 0.0, maximum: 0.0, mean: 0.0, median: 0.0, Q1: 0.0, Q3: 0.0,
+      IQR: 0.0}
+    2 years prior: {minimum: 0.0, maximum: 0.0, mean: 0.0, median: 0.0, Q1: 0.0, Q3: 0.0,
+      IQR: 0.0}
+  - name: Pre HET record counts | 9HPT
+    status: COMPLETED
+    HET population size: 857
+    1 year prior: {minimum: 0.0, maximum: 0.0, mean: 0.0, median: 0.0, Q1: 0.0, Q3: 0.0,
+      IQR: 0.0}
+    2 years prior: {minimum: 0.0, maximum: 0.0, mean: 0.0, median: 0.0, Q1: 0.0, Q3: 0.0,
+      IQR: 0.0}
+  - name: MRI scan pre HET record counts
+    status: COMPLETED
+    HET population size: 857
+    1 year prior: {minimum: 0.0, maximum: 3.0, mean: 0.63, median: 1.0, Q1: 0.0, Q3: 1.0,
+      IQR: 1.0}
+    2 years prior: {minimum: 0.0, maximum: 6.0, mean: 0.95, median: 1.0, Q1: 0.0,
+      Q3: 2.0, IQR: 2.0}
+  - {name: Patients with diagnosis.diagnosis == MS, status: COMPLETED, person total (count): 6328,
+    person with value (count): 4679, person with value (%): 73.94}
+  - {name: Patients with observation.observation == EDSS, status: COMPLETED, person total (count): 6328,
+    person with value (count): 6268, person with value (%): 99.05}
+  - name: Patients with a specific MS subtype. Percentages are over the total number
+      of patients with a MS diagnosis.
+    status: COMPLETED
+    total persons with MS: 4679
+    PPMS: {persons (count): 270, persons (%): 5.77}
+    RRMS: {persons (count): 4659, persons (%): 99.57}
+    SPMS: {persons (count): 1037, persons (%): 22.16}
+  - name: Sex distribution per MS subtype. Percentages are over the total number of
+      patients with a specific MS subtype.
+    status: COMPLETED
+    PPMS:
+      total persons with MS subtype: 270
+      Female: [156, 57.78 %]
+      Male: [114, 42.22 %]
+      Other: [0, 0.0 %]
+      Unknown: [0, 0.0 %]
+    RRMS:
+      total persons with MS subtype: 4659
+      Female: [3397, 72.91 %]
+      Male: [1262, 27.09 %]
+      Other: [0, 0.0 %]
+      Unknown: [0, 0.0 %]
+    SPMS:
+      total persons with MS subtype: 1037
+      Female: [728, 70.2 %]
+      Male: [309, 29.8 %]
+      Other: [0, 0.0 %]
+      Unknown: [0, 0.0 %]
+  - {name: Patients with EDSS + other tests, status: NO DATA TO CHECK}
+  - {name: Patients that received a DMT., status: COMPLETED, person total (count): 6328,
+    person with DMT (count): 3504, person with DMT (% over all patients): 55.37, person with DMT and associated full dates (start and end) (count): 1214,
+    person with DMT and associated full dates (start and end) (% over DMT patients): 34.65,
+    person with DMT and associated dose (count): 3504, person with DMT and associated dose (% over DMT patients): 100.0}
+  - {name: Cross-check EDSS vs methods, status: COMPLETED, Observations total (count): 320771,
+    EDSS observations total (count): 43457, EDSS observations (% over all observations): 13.55,
+    EDSS observations with per protocol method (count): 31636, EDSS observations with per protocol method (% over all EDSS observations): 72.8,
+    EDSS observations with inferred algorithm method (count): 8182, EDSS observations with inferred algorithm method (% over all EDSS observations): 18.83,
+    EDSS observations with inferred human method (count): 3639, EDSS observations with inferred human method (% over all EDSS observations): 8.37}
+  - {name: Cross-check EDSS - ambulation vs methods, status: COMPLETED, Observations total (count): 320771,
+    EDSS - ambulation observations total (count): 43551, EDSS - ambulation observations (% over all observations): 13.58,
+    EDSS - ambulation observations with per protocol method (count): 31093, EDSS - ambulation observations with per protocol method (% over all EDSS - ambulation observations): 71.39,
+    EDSS - ambulation observations with inferred algorithm method (count): 8891, EDSS - ambulation observations with inferred algorithm method (% over all EDSS - ambulation observations): 20.42,
+    EDSS - ambulation observations with inferred human method (count): 3567, EDSS - ambulation observations with inferred human method (% over all EDSS - ambulation observations): 8.19}
+  - {name: Cross-check FSS - bowel & bladder vs methods, status: COMPLETED, Observations total (count): 320771,
+    FSS - bowel & bladder observations total (count): 27175, FSS - bowel & bladder observations (% over all observations): 8.47,
+    FSS - bowel & bladder observations with per protocol method (count): 20992, FSS - bowel & bladder observations with per protocol method (% over all FSS - bowel & bladder observations): 77.25,
+    FSS - bowel & bladder observations with inferred algorithm method (count): 4284,
+    FSS - bowel & bladder observations with inferred algorithm method (% over all FSS - bowel & bladder observations): 15.76,
+    FSS - bowel & bladder observations with inferred human method (count): 1899, FSS - bowel & bladder observations with inferred human method (% over all FSS - bowel & bladder observations): 6.99}
+  - {name: Cross-check FSS - brainstem vs methods, status: COMPLETED, Observations total (count): 320771,
+    FSS - brainstem observations total (count): 35999, FSS - brainstem observations (% over all observations): 11.22,
+    FSS - brainstem observations with per protocol method (count): 28932, FSS - brainstem observations with per protocol method (% over all FSS - brainstem observations): 80.37,
+    FSS - brainstem observations with inferred algorithm method (count): 4264, FSS - brainstem observations with inferred algorithm method (% over all FSS - brainstem observations): 11.84,
+    FSS - brainstem observations with inferred human method (count): 2803, FSS - brainstem observations with inferred human method (% over all FSS - brainstem observations): 7.79}
+  - {name: Cross-check FSS - cerebellar vs methods, status: COMPLETED, Observations total (count): 320771,
+    FSS - cerebellar observations total (count): 35330, FSS - cerebellar observations (% over all observations): 11.01,
+    FSS - cerebellar observations with per protocol method (count): 28374, FSS - cerebellar observations with per protocol method (% over all FSS - cerebellar observations): 80.31,
+    FSS - cerebellar observations with inferred algorithm method (count): 4184, FSS - cerebellar observations with inferred algorithm method (% over all FSS - cerebellar observations): 11.84,
+    FSS - cerebellar observations with inferred human method (count): 2772, FSS - cerebellar observations with inferred human method (% over all FSS - cerebellar observations): 7.85}
+  - {name: Cross-check FSS - cerebral vs methods, status: COMPLETED, Observations total (count): 320771,
+    FSS - cerebral observations total (count): 26952, FSS - cerebral observations (% over all observations): 8.4,
+    FSS - cerebral observations with per protocol method (count): 20971, FSS - cerebral observations with per protocol method (% over all FSS - cerebral observations): 77.81,
+    FSS - cerebral observations with inferred algorithm method (count): 4179, FSS - cerebral observations with inferred algorithm method (% over all FSS - cerebral observations): 15.51,
+    FSS - cerebral observations with inferred human method (count): 1802, FSS - cerebral observations with inferred human method (% over all FSS - cerebral observations): 6.69}
+  - {name: Cross-check FSS - pyramidal vs methods, status: COMPLETED, Observations total (count): 320771,
+    FSS - pyramidal observations total (count): 40996, FSS - pyramidal observations (% over all observations): 12.78,
+    FSS - pyramidal observations with per protocol method (count): 30203, FSS - pyramidal observations with per protocol method (% over all FSS - pyramidal observations): 73.67,
+    FSS - pyramidal observations with inferred algorithm method (count): 7483, FSS - pyramidal observations with inferred algorithm method (% over all FSS - pyramidal observations): 18.25,
+    FSS - pyramidal observations with inferred human method (count): 3310, FSS - pyramidal observations with inferred human method (% over all FSS - pyramidal observations): 8.07}
+  - {name: Cross-check FSS - sensory vs methods, status: COMPLETED, Observations total (count): 320771,
+    FSS - sensory observations total (count): 35201, FSS - sensory observations (% over all observations): 10.97,
+    FSS - sensory observations with per protocol method (count): 28546, FSS - sensory observations with per protocol method (% over all FSS - sensory observations): 81.09,
+    FSS - sensory observations with inferred algorithm method (count): 3829, FSS - sensory observations with inferred algorithm method (% over all FSS - sensory observations): 10.88,
+    FSS - sensory observations with inferred human method (count): 2826, FSS - sensory observations with inferred human method (% over all FSS - sensory observations): 8.03}
+  - {name: Cross-check FSS - visual vs methods, status: COMPLETED, Observations total (count): 320771,
+    FSS - visual observations total (count): 32110, FSS - visual observations (% over all observations): 10.01,
+    FSS - visual observations with per protocol method (count): 25810, FSS - visual observations with per protocol method (% over all FSS - visual observations): 80.38,
+    FSS - visual observations with inferred algorithm method (count): 3693, FSS - visual observations with inferred algorithm method (% over all FSS - visual observations): 11.5,
+    FSS - visual observations with inferred human method (count): 2607, FSS - visual observations with inferred human method (% over all FSS - visual observations): 8.12}
+  value range:
+  - name: drug_exposure.posology_dose range (min=0, max=None)
+    status: PASS
+    records checked: 9701
+    invalid values: {}
+  - name: observation = EDSS | range (min=0.0, max=10.0)
+    status: PASS
+    records checked: 43457
+    invalid values: {}
+  - name: observation = EDSS - ambulation | range (min=0.0, max=10.0)
+    status: FAIL
+    records checked: 43551
+    invalid values: {11.0: 617, 12.0: 491, 13.0: 118, 14.0: 18}
+  - name: observation = FSS - bowel & bladder | range (min=0.0, max=6.0)
+    status: PASS
+    records checked: 27175
+    invalid values: {}
+  - name: observation = FSS - brainstem | range (min=0.0, max=5.0)
+    status: PASS
+    records checked: 35999
+    invalid values: {}
+  - name: observation = FSS - cerebellar | range (min=0.0, max=5.0)
+    status: PASS
+    records checked: 35330
+    invalid values: {}
+  - name: observation = FSS - cerebral | range (min=0.0, max=5.0)
+    status: PASS
+    records checked: 26952
+    invalid values: {}
+  - name: observation = FSS - pyramidal | range (min=0.0, max=6.0)
+    status: PASS
+    records checked: 40996
+    invalid values: {}
+  - name: observation = FSS - sensory | range (min=0.0, max=6.0)
+    status: PASS
+    records checked: 35201
+    invalid values: {}
+  - name: observation = FSS - visual | range (min=0.0, max=6.0)
+    status: PASS
+    records checked: 32110
+    invalid values: {}
+  - name: Date plausibility | person.birthdate
+    status: PASS
+    records checked: 6328
+    invalid values: {}
+  - name: Date plausibility | person.death_date
+    status: PASS
+    records checked: 21
+    invalid values: {}
+  - name: Date plausibility | diagnosis.diagnosis_start_date
+    status: PASS
+    records checked: 10855
+    invalid values: {}
+  - name: Date plausibility | diagnosis.diagnosis_end_date
+    status: PASS
+    records checked: 5838
+    invalid values: {}
+  - name: Date plausibility | relapse.relapse_start_date
+    status: PASS
+    records checked: 24147
+    invalid values: {}
+  - name: Date plausibility | drug_exposure.drug_start_date
+    status: PASS
+    records checked: 9724
+    invalid values: {}
+  - name: Date plausibility | drug_exposure.drug_end_date
+    status: PASS
+    records checked: 6684
+    invalid values: {}
+  - name: Date plausibility | observation.observation_date
+    status: PASS
+    records checked: 320771
+    invalid values: {}
+  - name: Date plausibility | measurement.measurement_date
+    status: PASS
+    records checked: 55904
+    invalid values: {}
+  - name: Date plausibility | biosample.collection_date
+    status: PASS
+    records checked: 25
+    invalid values: {}
+  - name: Date plausibility | biosample.visit_date
+    status: PASS
+    records checked: 25
+    invalid values: {}
+  value range (no data):
+  - name: relapse.duration range (min=0, max=None)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = 9HPT | range (min=1.0, max=300.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = AI | range (min=0.0, max=9.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = BAI | range (min=0.0, max=63.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = BDI | range (min=0.0, max=63.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = BLCS | range (min=0.0, max=22.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = BWCS | range (min=0.0, max=26.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = DS | range (min=0.0, max=6.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = EQ-5D | range (min=0.0, max=1.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = EQ-VAS | range (min=0.0, max=100.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = FIM | range (min=18.0, max=126.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = FSS - other | range (min=0.0, max=1.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = GNDS | range (min=0.0, max=60.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = HADS - Anxiety | range (min=0.0, max=21.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = HADS - Depression | range (min=0.0, max=21.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = IVIS | range (min=0.0, max=15.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = LCLA | range (min=0.0, max=70.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = MFIS | range (min=0.0, max=84.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = MHI | range (min=0.0, max=100.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = MHA | range (min=0.0, max=100.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = MHD | range (min=0.0, max=100.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = MHC | range (min=0.0, max=100.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = MHP | range (min=0.0, max=100.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = MMSE | range (min=0.0, max=30.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = MSDRS | range (min=0.0, max=40.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = MSFC | range (min=-6.0, max=32.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = MSFOL-54 | range (min=0.0, max=100.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = MSIS-29 | range (min=0.0, max=100.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = MSSS | range (min=4.0, max=25.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = TAN | range (min=4.0, max=20.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = EMI | range (min=8.0, max=40.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = AFF | range (min=3.0, max=15.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = POS | range (min=3.0, max=15.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = MusiQol | range (min=0.0, max=100.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = NFI-MS | range (min=0.0, max=30.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = PASAT-2 | range (min=0.0, max=60.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = PASAT-3 | range (min=0.0, max=60.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = PDQ | range (min=0.0, max=80.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = PES | range (min=6.0, max=30.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = SDMT | range (min=0.0, max=110.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = SF-36 | range (min=0.0, max=100.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = SMSS | range (min=0.0, max=84.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = SSS | range (min=4.0, max=24.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = T25FWT | range (min=1.0, max=180.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = TUG duration | range (min=1.0, max=60.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = TUG falls | range (min=0.0, max=10.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: observation = VCWS-4 | range (min=1.0, max=3600.0)
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: Date plausibility | relapse.relapse_end_date
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: Date plausibility | procedure.procedure_start_date
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: Date plausibility | procedure.procedure_end_date
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: Date plausibility | symptom.symptom_start_date
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  - name: Date plausibility | symptom.symptom_end_date
+    status: NO DATA TO CHECK
+    records checked: 0
+    invalid values: {}
+  consistency:
+  - {name: person.birthdate <= person.death_date, status: PASS, records checked: 21,
+    records invalid: 0}
+  - {name: diagnosis.diagnosis_start_date <= diagnosis.diagnosis_end_date, status: PASS,
+    records checked: 5838, records invalid: 0}
+  - {name: diagnosis.diagnosis_end_date <= person.death_date, status: PASS, records checked: 23,
+    records invalid: 0}
+  - {name: person.birthdate <= diagnosis.diagnosis_end_date, status: PASS, records checked: 5838,
+    records invalid: 0}
+  - {name: diagnosis.diagnosis_start_date <= person.death_date, status: PASS, records checked: 38,
+    records invalid: 0}
+  - {name: person.birthdate <= relapse.relapse_start_date, status: PASS, records checked: 24147,
+    records invalid: 0}
+  - {name: relapse.relapse_start_date <= person.death_date, status: PASS, records checked: 79,
+    records invalid: 0}
+  - {name: person.birthdate <= observation.observation_date, status: PASS, records checked: 320771,
+    records invalid: 0}
+  - {name: observation.observation_date <= person.death_date, status: PASS, records checked: 673,
+    records invalid: 0}
+  - {name: person.birthdate <= measurement.measurement_date, status: PASS, records checked: 55904,
+    records invalid: 0}
+  - {name: measurement.measurement_date <= person.death_date, status: PASS, records checked: 109,
+    records invalid: 0}
+  - {name: drug_exposure.drug_start_date <= drug_exposure.drug_end_date, status: FAIL,
+    records checked: 6684, records invalid: 1}
+  - {name: person.birthdate <= drug_exposure.drug_start_date, status: PASS, records checked: 9724,
+    records invalid: 0}
+  - {name: drug_exposure.drug_end_date <= person.death_date, status: PASS, records checked: 25,
+    records invalid: 0}
+  - {name: biosample.visit_date <= biosample.collection_date, status: PASS, records checked: 25,
+    records invalid: 0}
+  - {name: person.birthdate <= biosample.collection_date, status: PASS, records checked: 25,
+    records invalid: 0}
+  - {name: person.birthdate <= biosample.visit_date, status: PASS, records checked: 25,
+    records invalid: 0}
+  - {name: First diagnosis start_date <= observation.observation_date, status: FAIL,
+    records checked: 258652, records invalid: 411}
+  - {name: Overlapping drug_exposure periods, status: FAIL, records checked: 6683,
+    records invalid: 17}
+  - {name: Inconsistency between death date and status, status: PASS, records checked: 6328,
+    records invalid: 0}
+  - {name: Drug links to both relapse and diagnosis, status: PASS, records checked: 9724,
+    records invalid: 0}
+  - {name: Inconsistent death status - stop_reason, status: PASS, records checked: 9724,
+    records invalid: 0}
+  - {name: Inconsistent diagnosis - ms_subtype, status: PASS, records checked: 10855,
+    records invalid: 0}
+  consistency (no data):
+  - {name: symptom.symptom_start_date <= symptom.symptom_end_date, status: NO DATA
+      TO CHECK, records checked: 0, records invalid: 0}
+  - {name: person.birthdate <= symptom.symptom_start_date, status: NO DATA TO CHECK,
+    records checked: 0, records invalid: 0}
+  - {name: symptom.symptom_start_date <= person.death_date, status: NO DATA TO CHECK,
+    records checked: 0, records invalid: 0}
+  - {name: relapse.relapse_start_date <= relapse.relapse_end_date, status: NO DATA
+      TO CHECK, records checked: 0, records invalid: 0}
+  - {name: relapse.relapse_end_date <= person.death_date, status: NO DATA TO CHECK,
+    records checked: 0, records invalid: 0}
+  - {name: person.birthdate <= relapse.relapse_end_date, status: NO DATA TO CHECK,
+    records checked: 0, records invalid: 0}
+  - {name: relapse.relapse_start_date <= observation.observation_date, status: NO
+      DATA TO CHECK, records checked: 0, records invalid: 0}
+  - {name: relapse.relapse_start_date <= measurement.measurement_date, status: NO
+      DATA TO CHECK, records checked: 0, records invalid: 0}
+  - {name: diagnosis.diagnosis_start_date <= drug_exposure.drug_start_date, status: NO
+      DATA TO CHECK, records checked: 0, records invalid: 0}
+  - {name: procedure.procedure_start_date <= procedure.procedure_end_date, status: NO
+      DATA TO CHECK, records checked: 0, records invalid: 0}
+  - {name: person.birthdate <= procedure.procedure_start_date, status: NO DATA TO
+      CHECK, records checked: 0, records invalid: 0}
+  - {name: diagnosis.diagnosis_start_date <= procedure.procedure_start_date, status: NO
+      DATA TO CHECK, records checked: 0, records invalid: 0}
+  - {name: procedure.procedure_end_date <= person.death_date, status: NO DATA TO CHECK,
+    records checked: 0, records invalid: 0}
+  - {name: biosample.collection_date <= person.death_date, status: NO DATA TO CHECK,
+    records checked: 0, records invalid: 0}
+  - {name: biosample.visit_date <= person.death_date, status: NO DATA TO CHECK, records checked: 0,
+    records invalid: 0}
+  - {name: Overlapping procedure periods, status: NO DATA TO CHECK, records checked: 0,
+    records invalid: null}
+  - {name: Procedure links to both relapse and diagnosis, status: NO DATA TO CHECK,
+    records checked: 0, records invalid: 0}
+  - {name: Unexpected observations for unit 's'. The records_checked value reflects
+      the number of records having unit 's', status: NO DATA TO CHECK, records checked: 0,
+    records invalid: 0}
